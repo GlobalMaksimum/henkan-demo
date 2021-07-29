@@ -6,15 +6,15 @@ nodes:
       conf: conf/f_atrueflow_pgtohadoop.json
       source: PGLab
       target: hive
-      source_table: public.lineitem
       explain_only: false
       empty_source_check: true
       target_table: default.lineitem
+      source_table: public.lineitem
     dependsOn: []
   - name: PrebuiltAggregation
     type: transform
     config:
-      target: veon10
+      target: v360hive
       sql_file: sql/f_atrueflow_prebuiltaggregation.sql
       explain_only: false
     dependsOn:
@@ -22,7 +22,7 @@ nodes:
   - name: TruncateVertica
     type: transform
     config:
-      target: TruncateVerticaTarget
+      target: veon10
       sql_file: sql/f_atrueflow_truncatevertica.sql
       explain_only: false
     dependsOn:
