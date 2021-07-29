@@ -1,0 +1,69 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "l_orderkey",
+      "target_column": "L_ORDERKEY"
+    },
+    {
+      "source_column": "l_partkey",
+      "target_column": "L_PARTKEY"
+    },
+    {
+      "source_column": "l_suppkey",
+      "target_column": "L_SUPPKEY"
+    },
+    {
+      "source_column": "l_linenumber",
+      "target_column": "L_LINENUMBER"
+    },
+    {
+      "source_column": "l_quantity",
+      "target_column": "L_QUANTITY"
+    },
+    {
+      "source_column": "l_extendedprice",
+      "target_column": "L_EXTENDEDPRICE"
+    },
+    {
+      "source_column": "l_discount",
+      "target_column": "L_DISCOUNT"
+    },
+    {
+      "source_column": "l_tax",
+      "target_column": "L_TAX"
+    },
+    {
+      "source_column": "l_returnflag",
+      "target_column": "L_RETURNFLAG"
+    },
+    {
+      "source_column": "l_linestatus",
+      "target_column": "L_LINESTATUS"
+    },
+    {
+      "source_column": "l_shipdate",
+      "target_column": "L_SHIPDATE"
+    },
+    {
+      "source_column": "l_commitdate",
+      "target_column": "L_COMMITDATE"
+    },
+    {
+      "source_column": "l_receiptdate",
+      "target_column": "L_RECEIPTDATE"
+    },
+    {
+      "source_column": "l_shipinstruct",
+      "target_column": "L_SHIPINSTRUCT"
+    },
+    {
+      "source_column": "l_shipmode",
+      "target_column": "L_SHIPMODE"
+    },
+    {
+      "source_column": "l_comment",
+      "target_column": "L_COMMENT"
+    }
+  ],
+  "fetch_size": 600
+}

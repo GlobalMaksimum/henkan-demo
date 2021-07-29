@@ -1,0 +1,14 @@
+nodes:
+  - name: PGtoVertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_simpleextr_pgtovertica.json
+      source: PGLab
+      target: veon10
+      source_table: public.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: public.lineitem_pg
+    dependsOn: []
+config: {}
