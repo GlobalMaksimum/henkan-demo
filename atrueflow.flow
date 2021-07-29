@@ -1,24 +1,25 @@
 nodes:
-  - name: PGToHadoop
+  - name: PGToVertica
     type: transfer
     config:
       subtype: spark
-      conf: conf/f_atrueflow_pgtohadoop.json
+      conf: conf/f_atrueflow_pgtovertica.json
       source: PGLab
-      target: hive
+      target: veon10
       explain_only: false
       empty_source_check: true
-      target_table: default.lineitem
+      target_table: public.lineitem
       source_table: public.lineitem
-    dependsOn: []
-  - name: PrebuiltAggregation
+    dependsOn:
+      - TruncateTableFirst
+  - name: AggOnVertica
     type: transform
     config:
-      target: v360hive
-      sql_file: sql/f_atrueflow_prebuiltaggregation.sql
+      target: veon10
+      sql_file: sql/f_atrueflow_aggonvertica.sql
       explain_only: false
     dependsOn:
-      - PGToHadoop
+      - TruncateVertica
   - name: TruncateVertica
     type: transform
     config:
@@ -26,18 +27,12 @@ nodes:
       sql_file: sql/f_atrueflow_truncatevertica.sql
       explain_only: false
     dependsOn:
-      - PrebuiltAggregation
-  - name: LoadIntoVertica
-    type: transfer
+      - PGToVertica
+  - name: TruncateTableFirst
+    type: transform
     config:
-      subtype: spark
-      conf: conf/f_atrueflow_loadintovertica.json
-      source: hive
       target: veon10
-      source_table: default.lineitem_summ
+      sql_file: sql/f_atrueflow_truncatetablefirst.sql
       explain_only: false
-      empty_source_check: true
-      target_table: public.lineitem_summ
-    dependsOn:
-      - TruncateVertica
+    dependsOn: []
 config: {}
