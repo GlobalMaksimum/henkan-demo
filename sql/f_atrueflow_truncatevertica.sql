@@ -1,0 +1,1 @@
+truncate table lineitem_summ;

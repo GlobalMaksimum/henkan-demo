@@ -1,0 +1,17 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "l_orderkey",
+      "target_column": "l_orderkey"
+    },
+    {
+      "source_column": "total_quantity",
+      "target_column": "total_q"
+    },
+    {
+      "source_column": "total_price",
+      "target_column": "total_p"
+    }
+  ],
+  "fetch_size": 600
+}

@@ -1,0 +1,43 @@
+nodes:
+  - name: PGToHadoop
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_atrueflow_pgtohadoop.json
+      source: PGLab
+      target: hive
+      source_table: public.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: default.lineitem
+    dependsOn: []
+  - name: PrebuiltAggregation
+    type: transform
+    config:
+      target: veon10
+      sql_file: sql/f_atrueflow_prebuiltaggregation.sql
+      explain_only: false
+    dependsOn:
+      - PGToHadoop
+  - name: TruncateVertica
+    type: transform
+    config:
+      target: TruncateVerticaTarget
+      sql_file: sql/f_atrueflow_truncatevertica.sql
+      explain_only: false
+    dependsOn:
+      - PrebuiltAggregation
+  - name: LoadIntoVertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_atrueflow_loadintovertica.json
+      source: hive
+      target: veon10
+      source_table: default.lineitem_summ
+      explain_only: false
+      empty_source_check: true
+      target_table: public.lineitem_summ
+    dependsOn:
+      - TruncateVertica
+config: {}
