@@ -1,0 +1,47 @@
+nodes:
+  - name: SupplierDimension
+    type: scd
+    config:
+      subtype: spark
+      conf: conf/f_scd_supplierdimension.json
+      target: hive
+      explain_only: false
+      source_table: default.supplier
+      change_tolerance: 10
+      target_table: default.dim_supplier
+    dependsOn:
+      - TransferSupplier
+  - name: TransferSupplier
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_scd_transfersupplier.json
+      source: PGLab
+      target: hive
+      source_table: public.supplier
+      explain_only: false
+      empty_source_check: true
+      target_table: default.supplier
+    dependsOn: []
+  - name: TruncateDimOnVertica
+    type: transform
+    config:
+      target: veon10
+      sql_file: sql/f_scd_truncatedimonvertica.sql
+      explain_only: false
+    dependsOn:
+      - SupplierDimension
+  - name: LoadIntoVertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_scd_loadintovertica.json
+      source: hive
+      target: veon10
+      source_table: default.dim_supplier
+      explain_only: false
+      empty_source_check: true
+      target_table: public.dim_supplier
+    dependsOn:
+      - TruncateDimOnVertica
+config: {}

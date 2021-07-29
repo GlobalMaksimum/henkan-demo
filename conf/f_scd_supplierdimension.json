@@ -1,0 +1,47 @@
+{
+  "scd_columns": [
+    {
+      "name": "s_name",
+      "scd_type": 1
+    },
+    {
+      "name": "s_address",
+      "scd_type": 2
+    },
+    {
+      "name": "s_nationkey",
+      "scd_type": 1
+    },
+    {
+      "name": "s_phone",
+      "scd_type": 1
+    },
+    {
+      "name": "s_acctbal",
+      "scd_type": 2
+    },
+    {
+      "name": "s_comment",
+      "scd_type": 1
+    }
+  ],
+  "keys": [
+    "s_suppkey"
+  ],
+  "target_table_sk": "supplier_sk",
+  "scd_id": "dim_supplier",
+  "sequence_name_of_sk": "SEQ_dim_supplier",
+  "temp_schema": "TEMP",
+  "temp_table_prefix": "SCD_LOAD_",
+  "locale": "en_US",
+  "extra_columns": {
+    "effective_date": "effective_date",
+    "expiry_date": "expiry_date",
+    "update_date": "etl_date_update",
+    "create_date": "etl_date_create",
+    "create_etl_id": "etl_id_create",
+    "update_etl_id": "etl_id_update",
+    "delete_flag": "is_deleted_in_source",
+    "current_flag": "is_current"
+  }
+}

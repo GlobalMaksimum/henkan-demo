@@ -1,0 +1,69 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "supplier_sk",
+      "target_column": "supplier_sk"
+    },
+    {
+      "source_column": "s_suppkey",
+      "target_column": "S_SUPPKEY"
+    },
+    {
+      "source_column": "s_name",
+      "target_column": "S_NAME"
+    },
+    {
+      "source_column": "s_address",
+      "target_column": "S_ADDRESS"
+    },
+    {
+      "source_column": "s_nationkey",
+      "target_column": "S_NATIONKEY"
+    },
+    {
+      "source_column": "s_phone",
+      "target_column": "S_PHONE"
+    },
+    {
+      "source_column": "s_acctbal",
+      "target_column": "S_ACCTBAL"
+    },
+    {
+      "source_column": "s_comment",
+      "target_column": "S_COMMENT"
+    },
+    {
+      "source_column": "effective_date",
+      "target_column": "effective_date"
+    },
+    {
+      "source_column": "expiry_date",
+      "target_column": "expiry_date"
+    },
+    {
+      "source_column": "etl_date_create",
+      "target_column": "etl_date_create"
+    },
+    {
+      "source_column": "etl_date_update",
+      "target_column": "etl_date_update"
+    },
+    {
+      "source_column": "etl_id_create",
+      "target_column": "etl_id_create"
+    },
+    {
+      "source_column": "etl_id_update",
+      "target_column": "etl_id_update"
+    },
+    {
+      "source_column": "is_deleted_in_source",
+      "target_column": "is_deleted_in_source"
+    },
+    {
+      "source_column": "is_current",
+      "target_column": "is_current"
+    }
+  ],
+  "fetch_size": 600
+}
