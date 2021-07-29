@@ -1,0 +1,23 @@
+nodes:
+  - name: PgToVerticaWithSourceAgg
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_sourceagg_pgtoverticawithsourceagg.json
+      source: PGLab
+      target: veon10
+      source_table: PgToVerticaWithSourceAggTable
+      sql_file: sql/f_sourceagg_pgtoverticawithsourceagg.sql
+      explain_only: false
+      empty_source_check: true
+      target_table: public.lineitem_summ
+    dependsOn:
+      - TruncateTableOnSource
+  - name: TruncateTableOnSource
+    type: transform
+    config:
+      target: veon10
+      sql_file: sql/f_sourceagg_truncatetableonsource.sql
+      explain_only: false
+    dependsOn: []
+config: {}
