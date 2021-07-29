@@ -6,11 +6,10 @@ nodes:
       conf: conf/f_sourceagg_pgtoverticawithsourceagg.json
       source: PGLab
       target: veon10
-      source_table: PgToVerticaWithSourceAggTable
-      sql_file: sql/f_sourceagg_pgtoverticawithsourceagg.sql
       explain_only: false
       empty_source_check: true
       target_table: public.lineitem_summ
+      sql_file: sql/f_sourceagg_pgtoverticawithsourceagg.sql
     dependsOn:
       - TruncateTableOnSource
   - name: TruncateTableOnSource
