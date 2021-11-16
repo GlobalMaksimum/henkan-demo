@@ -1,1 +1,1 @@
-truncate table lineitem;
+truncate table henkan_demo.lineitem;

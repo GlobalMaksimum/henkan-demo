@@ -8,14 +8,14 @@ nodes:
       target: vertica
       explain_only: false
       empty_source_check: true
-      target_table: public.lineitem
+      target_table: henkan_demo.lineitem
       source_table: public.lineitem
     dependsOn:
       - TruncateTableFirst
   - name: AggOnVertica
     type: transform
     config:
-      target: veon10
+      target: vertica
       sql_file: sql/f_atrueflow_aggonvertica.sql
       explain_only: false
     dependsOn:
