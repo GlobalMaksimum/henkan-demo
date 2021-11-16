@@ -31,7 +31,7 @@ nodes:
       source_table: default.lineitem_summ
       target_table: henkan_demo.lineitem_summ
     dependsOn:
-      - AggLineItemSumm
+      - TruncateLineItemSummVertica
   - name: TruncateLineItemSumm
     type: transform
     config:
@@ -40,4 +40,12 @@ nodes:
       explain_only: false
     dependsOn:
       - TransferLineItemToHive
+  - name: TruncateLineItemSummVertica
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_hiveagg_truncatelineitemsummvertica.sql
+      explain_only: false
+    dependsOn:
+      - AggLineItemSumm
 config: {}
