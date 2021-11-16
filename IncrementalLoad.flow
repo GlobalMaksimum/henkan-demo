@@ -3,7 +3,7 @@ nodes:
     type: parameter
     config:
       param_name: Max_Partkey
-      target: v360hive
+      target: vertica
       sql_file: sql/f_incrementalload_refresh_max_partkey.sql
     dependsOn: []
   - name: TransferPartToHive

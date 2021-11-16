@@ -1,1 +1,1 @@
-select cast(nvl(max(p_partkey),0) as string) from default.part
+select cast(nvl(max(p_partkey),0) as varchar) from default.part
