@@ -10,12 +10,12 @@ nodes:
       change_tolerance: '100'
       target_table: default.dim_supplier
     dependsOn:
-      - TransferSupplier
-  - name: TransferSupplier
+      - Transfer_Supplier
+  - name: Transfer_Supplier
     type: transfer
     config:
       subtype: spark
-      conf: conf/f_scd_transfersupplier.json
+      conf: conf/f_scd_transfer_supplier.json
       source: PGLab
       target: hive
       explain_only: false
