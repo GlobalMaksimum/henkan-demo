@@ -1,0 +1,1 @@
+select nvl(max(p_partkey),0) from henkan_demo.part

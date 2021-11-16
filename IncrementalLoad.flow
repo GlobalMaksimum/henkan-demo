@@ -1,0 +1,22 @@
+nodes:
+  - name: Refresh_Max_Partkey
+    type: parameter
+    config:
+      param_name: Max_Partkey
+      target: vertica
+      sql_file: sql/f_incrementalload_refresh_max_partkey.sql
+    dependsOn: []
+  - name: TransferPartToVertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_incrementalload_transferparttovertica.json
+      source: PGLab
+      target: vertica
+      explain_only: false
+      empty_source_check: true
+      sql_file: sql/f_incrementalload_transferparttovertica.sql
+      target_table: henkan_demo.part
+    dependsOn:
+      - Refresh_Max_Partkey
+config: {}
