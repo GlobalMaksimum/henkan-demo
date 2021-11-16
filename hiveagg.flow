@@ -11,11 +11,11 @@ nodes:
       empty_source_check: true
       target_table: default.lineitem
     dependsOn: []
-  - name: TransformLineItemSumm
+  - name: AggLineItemSumm
     type: transform
     config:
       target: v360hive
-      sql_file: sql/f_hiveagg_transformlineitemsumm.sql
+      sql_file: sql/f_hiveagg_agglineitemsumm.sql
       explain_only: false
     dependsOn:
       - TruncateLineItemSumm
@@ -31,7 +31,7 @@ nodes:
       source_table: default.lineitem_summ
       target_table: henkan_demo.lineitem_summ
     dependsOn:
-      - TransformLineItemSumm
+      - AggLineItemSumm
   - name: TruncateLineItemSumm
     type: transform
     config:
