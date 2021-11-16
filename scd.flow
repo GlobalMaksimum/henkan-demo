@@ -21,7 +21,7 @@ nodes:
       explain_only: false
       empty_source_check: true
       target_table: default.supplier
-      source_table: supplier
+      source_table: source_supplier
     dependsOn: []
   - name: TruncateDimOnVertica
     type: transform
