@@ -14,11 +14,11 @@ nodes:
   - name: TransformLineItemSumm
     type: transform
     config:
-      target: hive
+      target: v360hive
       sql_file: sql/f_hiveagg_transformlineitemsumm.sql
       explain_only: false
     dependsOn:
-      - TransferLineItemToHive
+      - TruncateLineItemSumm
   - name: TransferLineitemSummToVertica
     type: transfer
     config:
@@ -32,4 +32,12 @@ nodes:
       target_table: henkan_demo.lineitem_summ
     dependsOn:
       - TransformLineItemSumm
+  - name: TruncateLineItemSumm
+    type: transform
+    config:
+      target: v360hive
+      sql_file: sql/f_hiveagg_truncatelineitemsumm.sql
+      explain_only: false
+    dependsOn:
+      - TransferLineItemToHive
 config: {}
