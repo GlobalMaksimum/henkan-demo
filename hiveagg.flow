@@ -15,14 +15,14 @@ nodes:
   - name: TruncateLineitemHive
     type: transform
     config:
-      target: hive
+      target: v360hive
       sql_file: sql/f_hiveagg_truncatelineitemhive.sql
       explain_only: false
     dependsOn: []
   - name: TransformLineItemSumm
     type: transform
     config:
-      target: hive
+      target: v360hive
       sql_file: sql/f_hiveagg_transformlineitemsumm.sql
       explain_only: false
     dependsOn:
