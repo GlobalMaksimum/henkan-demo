@@ -11,12 +11,12 @@ nodes:
       target_table: henkan_demo.lineitem_summ
       sql_file: sql/f_sourceagg_pgtoverticawithsourceagg.sql
     dependsOn:
-      - TruncateTableOnSource
-  - name: TruncateTableOnSource
+      - TruncateTableOnVertica
+  - name: TruncateTableOnVertica
     type: transform
     config:
       target: vertica
-      sql_file: sql/f_sourceagg_truncatetableonsource.sql
+      sql_file: sql/f_sourceagg_truncatetableonvertica.sql
       explain_only: false
     dependsOn: []
 config: {}
