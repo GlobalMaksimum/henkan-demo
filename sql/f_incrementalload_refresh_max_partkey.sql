@@ -1,1 +1,1 @@
-select nvl(max(p_partkey),0) from henkan_demo.part
+select nvl(max(p_partkey),0)::varchar from henkan_demo.part
