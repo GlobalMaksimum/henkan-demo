@@ -5,7 +5,7 @@ nodes:
       subtype: spark
       conf: conf/f_atrueflow_pgtovertica.json
       source: PGLab
-      target: veon10
+      target: vertica
       explain_only: false
       empty_source_check: true
       target_table: public.lineitem
@@ -23,7 +23,7 @@ nodes:
   - name: TruncateVertica
     type: transform
     config:
-      target: veon10
+      target: vertica
       sql_file: sql/f_atrueflow_truncatevertica.sql
       explain_only: false
     dependsOn:
