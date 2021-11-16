@@ -1,0 +1,16 @@
+nodes:
+  - name: ETL_DATE
+    type: parameter
+    config:
+      param_name: ETL_DATE
+      target: vertica
+      sql_file: sql/f_refresh_parameters_etl_date.sql
+    dependsOn: []
+  - name: ETL_ID
+    type: parameter
+    config:
+      param_name: ETL_ID
+      target: vertica
+      sql_file: sql/f_refresh_parameters_etl_id.sql
+    dependsOn: []
+config: {}

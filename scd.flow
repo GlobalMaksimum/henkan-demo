@@ -22,7 +22,8 @@ nodes:
       empty_source_check: true
       target_table: default.supplier
       source_table: source_supplier
-    dependsOn: []
+    dependsOn:
+      - Refresh_Parameters
   - name: TruncateDimOnVertica
     type: transform
     config:
@@ -44,4 +45,9 @@ nodes:
       target_table: henkan_demo.dim_supplier
     dependsOn:
       - TruncateDimOnVertica
+  - name: Refresh_Parameters
+    type: subflow
+    config:
+      flow.name: Refresh_Parameters.subflow
+    dependsOn: []
 config: {}
