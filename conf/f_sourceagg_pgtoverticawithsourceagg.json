@@ -1,10 +1,17 @@
 {
-    "target_schema": "targetschema",
-    "target_table": "targettable",
-    "column_mappings": [
-  {"source_column": "column1"},
-  {"source_column": "column2"}
+  "column_mappings": [
+    {
+      "source_column": "l_orderkey",
+      "target_column": "l_orderkey"
+    },
+    {
+      "source_column": "total_quantity",
+      "target_column": "total_quantity"
+    },
+    {
+      "source_column": "total_price",
+      "target_column": "total_price"
+    }
   ],
-    "fetch_size": 600,
-    "truncate_load":false
-  }
+  "fetch_size": 600
+}
