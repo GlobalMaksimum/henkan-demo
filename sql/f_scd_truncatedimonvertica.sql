@@ -1,1 +1,1 @@
-truncate table dim_supplier;
+show truncate table dim_supplier.dim_supplier;

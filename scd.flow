@@ -4,10 +4,10 @@ nodes:
     config:
       subtype: spark
       conf: conf/f_scd_supplierdimension.json
-      target: veon10
+      target: hive
       explain_only: 'false'
       source_table: default.supplier
-      change_tolerance: 10
+      change_tolerance: '100'
       target_table: default.dim_supplier
     dependsOn:
       - TransferSupplier
@@ -21,12 +21,12 @@ nodes:
       explain_only: false
       empty_source_check: true
       target_table: default.supplier
-      sql_file: sql/f_scd_transfersupplier.sql
+      source_table: supplier
     dependsOn: []
   - name: TruncateDimOnVertica
     type: transform
     config:
-      target: veon10
+      target: vertica
       sql_file: sql/f_scd_truncatedimonvertica.sql
       explain_only: false
     dependsOn:
@@ -37,18 +37,11 @@ nodes:
       subtype: spark
       conf: conf/f_scd_loadintovertica.json
       source: hive
-      target: veon10
+      target: vertica
       source_table: default.dim_supplier
       explain_only: false
       empty_source_check: true
-      target_table: public.dim_supplier
+      target_table: henkan_demo.dim_supplier
     dependsOn:
       - TruncateDimOnVertica
-  - name: test
-    type: transform
-    config:
-      target: testTarget
-      sql_file: sql/f_scd_test.sql
-      explain_only: false
-    dependsOn: []
 config: {}

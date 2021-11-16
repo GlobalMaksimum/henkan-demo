@@ -5,10 +5,10 @@ nodes:
       subtype: spark
       conf: conf/f_simpleextr_pgtovertica.json
       source: PGLab
-      target: veon10
+      target: vertica
       source_table: public.lineitem
       explain_only: false
       empty_source_check: true
-      target_table: public.lineitem_pg
+      target_table: henkan_demo.lineitem_pg
     dependsOn: []
 config: {}
