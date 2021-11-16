@@ -19,7 +19,7 @@ nodes:
       source: PGLab
       target: hive
       explain_only: false
-      empty_source_check: true
+      empty_source_check: 'false'
       target_table: default.supplier
       source_table: source_supplier
     dependsOn:
