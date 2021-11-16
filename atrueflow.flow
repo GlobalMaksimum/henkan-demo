@@ -31,7 +31,7 @@ nodes:
   - name: TruncateTableFirst
     type: transform
     config:
-      target: veon10
+      target: vertica
       sql_file: sql/f_atrueflow_truncatetablefirst.sql
       explain_only: false
     dependsOn: []

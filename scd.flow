@@ -4,8 +4,8 @@ nodes:
     config:
       subtype: spark
       conf: conf/f_scd_supplierdimension.json
-      target: hive
-      explain_only: false
+      target: veon10
+      explain_only: 'false'
       source_table: default.supplier
       change_tolerance: 10
       target_table: default.dim_supplier
@@ -18,10 +18,10 @@ nodes:
       conf: conf/f_scd_transfersupplier.json
       source: PGLab
       target: hive
-      source_table: public.supplier
       explain_only: false
       empty_source_check: true
       target_table: default.supplier
+      sql_file: sql/f_scd_transfersupplier.sql
     dependsOn: []
   - name: TruncateDimOnVertica
     type: transform
