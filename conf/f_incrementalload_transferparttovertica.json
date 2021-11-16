@@ -1,9 +1,16 @@
 {
-    "target_schema": "targetschema",
-    "target_table": "targettable",
+    "target_schema": "henkan_demo",
+    "target_table": "part",
     "column_mappings": [
-  {"source_column": "column1"},
-  {"source_column": "column2"}
+  {"source_column": "p_partkey"},
+  {"source_column": "p_name"},
+  {"source_column": "p_mfgr"},
+  {"source_column": "p_brand"},
+  {"source_column": "p_type"},
+  {"source_column": "p_size"},
+  {"source_column": "p_container"},
+  {"source_column": "p_retailprice"},
+  {"source_column": "p_comment"}
   ],
     "fetch_size": 600,
     "truncate_load":false
