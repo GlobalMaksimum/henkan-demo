@@ -9,5 +9,5 @@
     p_retailprice, 
     p_comment 
 FROM 
-    public.part
+    public.source_part
 where p_partkey>${Max_Partkey} ) tbl
