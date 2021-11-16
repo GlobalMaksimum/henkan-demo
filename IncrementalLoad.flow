@@ -12,7 +12,7 @@ nodes:
       subtype: spark
       conf: conf/f_IncrementalLoad_transferparttohive.json
       source: PGLab
-      target: v360hive
+      target: hive
       explain_only: false
       empty_source_check: 'false'
       sql_file: sql/f_IncrementalLoad_transferparttohive.sql
