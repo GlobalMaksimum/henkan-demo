@@ -1,0 +1,51 @@
+nodes:
+  - name: TransferLineItemToHive
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_hiveagg_transferlineitemtohive.json
+      source: PGLab
+      target: hive
+      source_table: lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: default.lineitem
+    dependsOn:
+      - TruncateLineitemHive
+  - name: TruncateLineitemHive
+    type: transform
+    config:
+      target: hive
+      sql_file: sql/f_hiveagg_truncatelineitemhive.sql
+      explain_only: false
+    dependsOn: []
+  - name: TransformLineItemSumm
+    type: transform
+    config:
+      target: hive
+      sql_file: sql/f_hiveagg_transformlineitemsumm.sql
+      explain_only: false
+    dependsOn:
+      - TransferLineItemToHive
+  - name: Truncate Lineitem Vertica
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_hiveagg_truncate lineitem vertica.sql
+      explain_only: false
+    dependsOn:
+      - TransformLineItemSumm
+  - name: TransferLineitemSummToVertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_hiveagg_transferlineitemsummtovertica.json
+      source: hive
+      target: vertica
+      explain_only: false
+      empty_source_check: true
+      source_table: default.lineitem_summ
+      target_table: henkan_demo.lineitem_summ
+    dependsOn:
+      - Truncate Lineitem Vertica
+config: {}
