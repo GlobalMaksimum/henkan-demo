@@ -44,4 +44,11 @@ nodes:
       target_table: public.dim_supplier
     dependsOn:
       - TruncateDimOnVertica
+  - name: test
+    type: transform
+    config:
+      target: testTarget
+      sql_file: sql/f_scd_test.sql
+      explain_only: false
+    dependsOn: []
 config: {}
