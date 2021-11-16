@@ -12,11 +12,11 @@ nodes:
       subtype: spark
       conf: conf/f_IncrementalLoad_transferparttohive.json
       source: PGLab
-      target: vertica
+      target: v360hive
       explain_only: false
       empty_source_check: 'false'
       sql_file: sql/f_IncrementalLoad_transferparttohive.sql
-      target_table: henkan_demo.part
+      target_table: default.part
     dependsOn:
       - Refresh_Max_Partkey
 config: {}

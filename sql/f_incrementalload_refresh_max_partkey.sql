@@ -1,1 +1,1 @@
-select cast(nvl(max(p_partkey),0) as varchar) from henkan_demo.part
+select cast(nvl(max(p_partkey),0) as varchar) from default.part
