@@ -1,1 +1,1 @@
-truncate table dim_supplier.dim_supplier;
+truncate table henkan_demo.dim_supplier;
