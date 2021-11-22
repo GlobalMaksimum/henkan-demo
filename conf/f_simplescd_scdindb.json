@@ -25,11 +25,11 @@
       "scd_type": 1
     },
     {
-      "name": "hash_sc1",
+      "name": "__hash_scd_1",
       "scd_type": 1
     },
     {
-      "name": "hash_scd2",
+      "name": "__hash_scd_2",
       "scd_type": 1
     }
   ],
@@ -40,7 +40,7 @@
   "scd_id": "dim_supplier_indb",
   "sequence_name_of_sk": "SEQ_dim_supplier_indb",
   "temp_schema": "TEMP",
-  "temp_table_prefix": "SCD_LOAD_",
+  "temp_table_prefix": "SCD_LOAD__",
   "locale": "en_US",
   "extra_columns": {
     "effective_date": "effective_date",
