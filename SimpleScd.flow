@@ -57,9 +57,9 @@ nodes:
       conf: conf/f_simplescd_scdindb.json
       target: vertica
       explain_only: false
-      source_table: henkan_demo.supplier
       change_tolerance: '100'
       target_table: henkan_demo.dim_supplier_indb
+      sql_file: sql/f_simplescd_scdindb.sql
     dependsOn:
       - TransferSupplierToVertica
   - name: TransferSupplierToVertica
