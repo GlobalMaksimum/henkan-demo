@@ -1,2 +1,2 @@
 --write your sql
-(select * from henkan_demo.supplier) tbl
+(select * from henkan_demo.supplier)
