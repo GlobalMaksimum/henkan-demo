@@ -1,0 +1,9 @@
+nodes:
+  - name: VelocityArray
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_velocity_velocityarray.sql
+      explain_only: false
+    dependsOn: []
+config: {}

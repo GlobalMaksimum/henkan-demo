@@ -1,0 +1,13 @@
+nodes:
+  - name: dim_relation_type
+    type: scd
+    config:
+      subtype: updateless
+      conf: conf/f_simplescd_updateless_dim_relation_type.json
+      target: vertica
+      explain_only: false
+      change_tolerance: '100'
+      sql_file: sql/f_simplescd_updateless_dim_relation_type.sql
+      target_table: henkan_demo.dim_relation_type
+    dependsOn: []
+config: {}
