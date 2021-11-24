@@ -13,4 +13,19 @@ nodes:
       sql_file: sql/f_velocity_velocityloop.sql
       explain_only: false
     dependsOn: []
+  - name: VelocityLoopByValue
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_velocity_velocityloopbyvalue.sql
+      explain_only: false
+    dependsOn:
+      - DynamicFilter
+  - name: DynamicFilter
+    type: parameter
+    config:
+      param_name: DynamicFilter
+      target: vertica
+      sql_file: sql/f_velocity_dynamicfilter.sql
+    dependsOn: []
 config: {}
