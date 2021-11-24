@@ -2,5 +2,4 @@
 #{foreach}($i in $foo)
 insert into henkan_demo.velocity_array (name,id) values (foreach.index::varchar,$i);
 commit;
-#if( $foreach.hasNext ),#end
 #{end}
