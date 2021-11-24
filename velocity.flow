@@ -6,4 +6,11 @@ nodes:
       sql_file: sql/f_velocity_velocityarray.sql
       explain_only: false
     dependsOn: []
+  - name: VelocityLoop
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_velocity_velocityloop.sql
+      explain_only: false
+    dependsOn: []
 config: {}
