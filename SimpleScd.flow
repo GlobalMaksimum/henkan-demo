@@ -18,7 +18,7 @@ nodes:
       conf: conf/f_scd_transfer_supplier.json
       source: PGLab
       target: hive
-      explain_only: false
+      explain_only: 'false'
       empty_source_check: 'false'
       target_table: default.supplier
       source_table: source_supplier
