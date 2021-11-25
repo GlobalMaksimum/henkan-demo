@@ -4,5 +4,5 @@ select
 	description as relation_type_desc,
 	upper(description) as relation_type_desc_cd
 	from
-     henkan_demo.ext_relation_type
+     henkan_demo.extr_relation_type
 )
