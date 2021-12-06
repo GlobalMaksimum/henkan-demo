@@ -13,7 +13,7 @@
     "relation_type_id"
   ],
   "target_table_sk": "relation_type_sk",
-  "scd_id": "dim_relation_type",
+  "scd_id": "dim_relation_type1",
   "sequence_name_of_sk": "SEQ_dim_relation_type",
   "temp_schema": "TEMP",
   "temp_table_prefix": "SCD_LOAD_",
