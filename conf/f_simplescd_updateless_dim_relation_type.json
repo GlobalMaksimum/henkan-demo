@@ -2,7 +2,7 @@
   "scd_columns": [
     {
       "name": "relation_type_desc",
-      "scd_type": 2
+      "scd_type": 1
     },
     {
       "name": "relation_type_desc_cd",
@@ -13,7 +13,7 @@
     "relation_type_id"
   ],
   "target_table_sk": "relation_type_sk",
-  "scd_id": "dim_relation_type1",
+  "scd_id": "dim_relation_type",
   "sequence_name_of_sk": "SEQ_dim_relation_type",
   "temp_schema": "TEMP",
   "temp_table_prefix": "SCD_LOAD_",
