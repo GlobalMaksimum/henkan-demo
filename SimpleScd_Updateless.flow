@@ -7,8 +7,8 @@ nodes:
       target: vertica
       explain_only: false
       change_tolerance: '100'
-      sql_file: sql/f_simplescd_updateless_dim_relation_type.sql
       target_table: henkan_demo.dim_relation_type
+      source_table: henkan_demo.src_dim_rel_type
     dependsOn: []
   - name: dim_relation_type_indb
     type: scd
