@@ -13,6 +13,7 @@
     "relation_type_id"
   ],
   "target_table_sk": "relation_type_sk",
+  "table_backup_count": 0,
   "scd_id": "dim_relation_type_indb",
   "sequence_name_of_sk": "SEQ_dim_relation_type_indb",
   "temp_schema": "TEMP",
