@@ -27,10 +27,9 @@ nodes:
       subtype: indb
       conf: conf/f_simplescd_updateless_dim_rel_type_indb2.json
       target: vertica
-      sql_file: sql/f_simplescd_updateless_dim_rel_type_indb2.sql
       explain_only: false
-      source_table: dim_rel_type_indb2Table
       change_tolerance: '100'
       target_table: henkan_demo.dim_relation_type_indb2
+      sql_file: sql/f_simplescd_updateless_dim_rel_type_indb2.sql
     dependsOn: []
 config: {}
