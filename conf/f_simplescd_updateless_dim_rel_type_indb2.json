@@ -1,0 +1,31 @@
+{
+  "scd_columns": [
+    {
+      "name": "relation_type_desc",
+      "scd_type": 1
+    },
+    {
+      "name": "relation_type_desc_cd",
+      "scd_type": 1
+    }
+  ],
+  "keys": [
+    "relation_type_id"
+  ],
+  "target_table_sk": "relation_type_sk",
+  "scd_id": "dim_relation_type_indb2",
+  "sequence_name_of_sk": "SEQ_dim_relation_type_indb2",
+  "temp_schema": "TEMP",
+  "temp_table_prefix": "SCD_LOAD_",
+  "locale": "en_US",
+  "extra_columns": {
+    "effective_date": "effective_date",
+    "expiry_date": "expiry_date",
+    "update_date": "etl_date_update",
+    "create_date": "etl_date_create",
+    "create_etl_id": "etl_id_create",
+    "update_etl_id": "etl_id_update",
+    "delete_flag": "is_deleted_in_source",
+    "current_flag": "is_current"
+  }
+}
