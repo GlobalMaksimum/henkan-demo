@@ -6,7 +6,7 @@
     },
     {
       "name": "relation_type_desc_cd",
-      "scd_type": 2
+      "scd_type": 1
     }
   ],
   "keys": [
