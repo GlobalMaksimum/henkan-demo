@@ -6,7 +6,7 @@
     },
     {
       "name": "s_address",
-      "scd_type": 1
+      "scd_type": 2
     },
     {
       "name": "s_nationkey",
