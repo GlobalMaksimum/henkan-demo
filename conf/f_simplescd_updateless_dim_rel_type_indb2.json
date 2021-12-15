@@ -2,11 +2,11 @@
   "scd_columns": [
     {
       "name": "relation_type_desc",
-      "scd_type": 2
+      "scd_type": 1
     },
     {
       "name": "relation_type_desc_cd",
-      "scd_type": 2
+      "scd_type": 1
     }
   ],
   "keys": [
