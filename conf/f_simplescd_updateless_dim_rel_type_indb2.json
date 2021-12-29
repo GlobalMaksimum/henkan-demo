@@ -15,7 +15,7 @@
   "target_table_sk": "relation_type_sk",
   "scd_id": "dim_relation_type_indb2",
   "drop_backup_schema": "henkan_demo",
-  "drop_backup_table_name": "dim_relation_type_indb2_backup",
+  "drop_backup_table_name": "dim_relation_type_indb2_backup_",
   "sequence_name_of_sk": "SEQ_dim_relation_type_indb2",
   "temp_schema": "TEMP",
   "temp_table_prefix": "SCD_LOAD_",
