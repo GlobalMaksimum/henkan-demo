@@ -23,7 +23,7 @@ nodes:
       target_table: default.supplier
       source_table: source_supplier
     dependsOn:
-      - Refresh_Parameters
+      - Truncate_table
   - name: TruncateDimOnVertica
     type: transform
     config:
@@ -73,6 +73,14 @@ nodes:
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.supplier
+    dependsOn:
+      - Refresh_Parameters
+  - name: Truncate_table
+    type: transform
+    config:
+      target: Truncate_tableTarget
+      sql_file: sql/f_simplescd_truncate_table.sql
+      explain_only: false
     dependsOn:
       - Refresh_Parameters
 config: {}
