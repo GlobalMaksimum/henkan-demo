@@ -38,5 +38,5 @@
     }
   ],
   "fetch_size": 600,
-  "increment_by": "o_orderkey"
+  "filter": "o_orderkey>{p_max_orderkey}"
 }
