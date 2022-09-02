@@ -9,7 +9,7 @@
     o_clerk, 
     o_shippriority, 
     o_comment,
-    mod(o_orderkey,10) as splitter 
+    mod(o_orderkey,10) as splitter
 FROM 
     public.orders
 ) tbl
