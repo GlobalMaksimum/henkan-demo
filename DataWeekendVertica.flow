@@ -11,4 +11,29 @@ nodes:
       source_table: public.orders
       target_table: henkan_demo.orders
     dependsOn: []
+  - name: transfer_customers_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_dataweekendvertica_transfer_customers_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.customer
+    dependsOn:
+      - transfer_orders_pg_to_vertica
+  - name: dim_customer
+    type: scd
+    config:
+      subtype: indb
+      conf: conf/f_dataweekendvertica_dim_customer.json
+      target: vertica
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: 10
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - transfer_customers_pg_to_vertica
 config: {}
