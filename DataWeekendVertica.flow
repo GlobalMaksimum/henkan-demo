@@ -24,7 +24,7 @@ nodes:
       empty_source_check: true
       target_table: henkan_demo.customer
     dependsOn:
-      - transfer_orders_pg_to_vertica
+      - truncate_customers
   - name: dim_customer
     type: scd
     config:
@@ -44,4 +44,12 @@ nodes:
       target: vertica
       sql_file: sql/f_dataweekendvertica_param_set_max_orderkey.sql
     dependsOn: []
+  - name: truncate_customers
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_dataweekendvertica_truncate_customers.sql
+      explain_only: false
+    dependsOn:
+      - transfer_orders_pg_to_vertica
 config: {}
