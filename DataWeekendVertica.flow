@@ -7,7 +7,7 @@ nodes:
       source: PGLab
       target: vertica
       explain_only: false
-      empty_source_check: true
+      empty_source_check: 'false'
       target_table: henkan_demo.orders
       sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica.sql
     dependsOn:
@@ -21,7 +21,7 @@ nodes:
       target: vertica
       source_table: public.customer
       explain_only: false
-      empty_source_check: true
+      empty_source_check: 'false'
       target_table: henkan_demo.customer
     dependsOn:
       - truncate_customers
@@ -60,7 +60,7 @@ nodes:
       source: PGLab
       target: vertica
       explain_only: false
-      empty_source_check: true
+      empty_source_check: 'false'
       target_table: henkan_demo.orders
       sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.sql
     dependsOn: []
