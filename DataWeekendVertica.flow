@@ -1,0 +1,14 @@
+nodes:
+  - name: transfer_orders_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_dataweekendvertica_transfer_orders_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      explain_only: false
+      empty_source_check: true
+      source_table: public.orders
+      target_table: henkan_demo.orders
+    dependsOn: []
+config: {}
