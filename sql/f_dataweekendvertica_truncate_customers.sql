@@ -1,1 +1,1 @@
-truncate table henkan_demo.customers;
+truncate table henkan_demo.customer;
