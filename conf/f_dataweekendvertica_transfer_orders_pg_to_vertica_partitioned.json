@@ -38,6 +38,7 @@
     }
   ],
   "fetch_size": 600,
+  "increment_by": "o_orderdate",
   "partition_info": {
     "column_name": "splitter",
     "num_partitions": 10,
