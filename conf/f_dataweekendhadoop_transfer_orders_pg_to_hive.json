@@ -1,0 +1,41 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "o_orderkey",
+      "target_column": "o_orderkey"
+    },
+    {
+      "source_column": "o_custkey",
+      "target_column": "o_custkey"
+    },
+    {
+      "source_column": "o_orderstatus",
+      "target_column": "o_orderstatus"
+    },
+    {
+      "source_column": "o_totalprice",
+      "target_column": "o_totalprice"
+    },
+    {
+      "source_column": "o_orderdate",
+      "target_column": "o_orderdate"
+    },
+    {
+      "source_column": "o_orderpriority",
+      "target_column": "o_orderpriority"
+    },
+    {
+      "source_column": "o_clerk",
+      "target_column": "o_clerk"
+    },
+    {
+      "source_column": "o_shippriority",
+      "target_column": "o_shippriority"
+    },
+    {
+      "source_column": "o_comment",
+      "target_column": "o_comment"
+    }
+  ],
+  "fetch_size": 600
+}

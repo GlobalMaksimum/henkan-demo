@@ -1,0 +1,1 @@
+select o_orderkey from public.orders
