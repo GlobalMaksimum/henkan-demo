@@ -1,1 +1,1 @@
-select nvl(max(o_orderkey),0) from henkan_demo.orders
+select cast(nvl(max(o_orderkey),0) as varchar) from henkan_demo.orders
