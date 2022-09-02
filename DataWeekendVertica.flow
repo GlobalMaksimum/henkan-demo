@@ -8,8 +8,8 @@ nodes:
       target: vertica
       explain_only: false
       empty_source_check: true
-      source_table: public.orders
       target_table: henkan_demo.orders
+      sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica.sql
     dependsOn:
       - param_set_max_orderkey
   - name: transfer_customers_pg_to_vertica
@@ -52,4 +52,17 @@ nodes:
       explain_only: false
     dependsOn:
       - transfer_orders_pg_to_vertica
+  - name: transfer_orders_pg_to_vertica_partitioned
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.json
+      source: PGLab
+      target: vertica
+      source_table: transfer_orders_pg_to_vertica_partitionedTable
+      sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.sql
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.orders
+    dependsOn: []
 config: {}
