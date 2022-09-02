@@ -10,7 +10,8 @@ nodes:
       empty_source_check: true
       source_table: public.orders
       target_table: henkan_demo.orders
-    dependsOn: []
+    dependsOn:
+      - param_set_max_orderkey
   - name: transfer_customers_pg_to_vertica
     type: transfer
     config:
@@ -36,4 +37,11 @@ nodes:
       target_table: henkan_demo.dim_customer
     dependsOn:
       - transfer_customers_pg_to_vertica
+  - name: param_set_max_orderkey
+    type: parameter
+    config:
+      param_name: p_max_orderkey
+      target: vertica
+      sql_file: sql/f_dataweekendvertica_param_set_max_orderkey.sql
+    dependsOn: []
 config: {}

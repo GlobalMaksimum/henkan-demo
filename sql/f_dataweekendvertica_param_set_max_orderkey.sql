@@ -1,0 +1,1 @@
+select nvl(max(o_orderkey),0) from henkan_demo.orders

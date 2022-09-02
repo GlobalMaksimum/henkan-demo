@@ -37,5 +37,6 @@
       "target_column": "o_comment"
     }
   ],
-  "fetch_size": 600
+  "fetch_size": 600,
+  "increment_by": "o_orderkey"
 }
