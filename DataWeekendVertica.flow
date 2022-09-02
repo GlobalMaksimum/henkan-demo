@@ -59,10 +59,9 @@ nodes:
       conf: conf/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.json
       source: PGLab
       target: vertica
-      source_table: transfer_orders_pg_to_vertica_partitionedTable
-      sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.sql
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.orders
+      sql_file: sql/f_dataweekendvertica_transfer_orders_pg_to_vertica_partitioned.sql
     dependsOn: []
 config: {}
