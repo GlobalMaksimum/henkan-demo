@@ -1,0 +1,47 @@
+nodes:
+  - name: transfer_orders_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_demo22_transfer_orders_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      explain_only: false
+      empty_source_check: 'true'
+      source_table: public.orders
+      target_table: henkan_demo.orders
+    dependsOn: []
+  - name: transfer_customer_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_demo22_transfer_customer_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      explain_only: false
+      empty_source_check: true
+      sql_file: sql/f_demo22_transfer_customer_pg_to_vertica.sql
+      target_table: henkan_demo.customer
+    dependsOn:
+      - truncate_customer
+  - name: truncate_customer
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_demo22_truncate_customer.sql
+      explain_only: false
+    dependsOn:
+      - transfer_orders_pg_to_vertica
+  - name: scd_dim_customer
+    type: scd
+    config:
+      subtype: indb
+      conf: conf/f_demo22_scd_dim_customer.json
+      target: vertica
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: '10'
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - transfer_customer_pg_to_vertica
+config: {}
