@@ -1,0 +1,41 @@
+{
+  "column_mappings": [
+    {
+      "source_column": "p_partkey",
+      "target_column": "p_partkey"
+    },
+    {
+      "source_column": "p_name",
+      "target_column": "p_name"
+    },
+    {
+      "source_column": "p_mfgr",
+      "target_column": "p_mfgr"
+    },
+    {
+      "source_column": "p_brand",
+      "target_column": "p_brand"
+    },
+    {
+      "source_column": "p_type",
+      "target_column": "p_type"
+    },
+    {
+      "source_column": "p_size",
+      "target_column": "p_size"
+    },
+    {
+      "source_column": "p_container",
+      "target_column": "p_container"
+    },
+    {
+      "source_column": "p_retailprice",
+      "target_column": "p_retailprice"
+    },
+    {
+      "source_column": "p_comment",
+      "target_column": "p_comment"
+    }
+  ],
+  "fetch_size": 600
+}

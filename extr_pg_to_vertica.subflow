@@ -19,4 +19,64 @@ nodes:
       sql_file: sql/s_extr_pg_to_vertica_truncate_extr_pg_public_orders.sql
       explain_only: false
     dependsOn: []
+  - name: truncate_tableextr_pg_public_lineitem
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/s_extr_pg_to_vertica_truncate_tableextr_pg_public_lineitem.sql
+      explain_only: false
+    dependsOn: []
+  - name: truncate_table_extr_pg_public_part
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/s_extr_pg_to_vertica_truncate_table_extr_pg_public_part.sql
+      explain_only: false
+    dependsOn: []
+  - name: truncate_table_extr_pg_public_supplier
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/s_extr_pg_to_vertica_truncate_table_extr_pg_public_supplier.sql
+      explain_only: false
+    dependsOn: []
+  - name: transfer_lineitem_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/s_extr_pg_to_vertica_transfer_lineitem_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: extr_pg_public.lineitem
+    dependsOn:
+      - truncate_tableextr_pg_public_lineitem
+  - name: transfer_part_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/s_extr_pg_to_vertica_transfer_part_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.part
+      explain_only: false
+      empty_source_check: true
+      target_table: extr_pg_public.part
+    dependsOn:
+      - truncate_table_extr_pg_public_part
+  - name: transfer_supplier_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/s_extr_pg_to_vertica_transfer_supplier_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.supplier
+      explain_only: false
+      empty_source_check: true
+      target_table: extr_pg_public.supplier
+    dependsOn:
+      - truncate_table_extr_pg_public_supplier
 config: {}

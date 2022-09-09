@@ -1,5 +1,5 @@
 nodes:
-  - name: extr_pg_to_vertica
+  - name: extr
     type: subflow
     config:
       flow.name: extr_pg_to_vertica.subflow

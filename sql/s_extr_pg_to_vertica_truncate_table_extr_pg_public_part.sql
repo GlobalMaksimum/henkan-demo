@@ -1,0 +1,1 @@
+truncate table extr_pg_public.part;
