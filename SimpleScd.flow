@@ -78,7 +78,7 @@ nodes:
   - name: Truncate_table
     type: transform
     config:
-      target: Truncate_tableTarget
+      target: hive
       sql_file: sql/f_simplescd_truncate_table.sql
       explain_only: false
     dependsOn:
