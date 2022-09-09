@@ -1,0 +1,22 @@
+nodes:
+  - name: transfer_orders_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/s_extr_pg_to_vertica_transfer_orders_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.orders
+      explain_only: false
+      empty_source_check: true
+      target_table: extr_pg_public.orders
+    dependsOn:
+      - truncate_extr_pg_public_orders
+  - name: truncate_extr_pg_public_orders
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/s_extr_pg_to_vertica_truncate_extr_pg_public_orders.sql
+      explain_only: false
+    dependsOn: []
+config: {}
