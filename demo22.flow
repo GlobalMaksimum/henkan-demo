@@ -44,4 +44,16 @@ nodes:
       target_table: henkan_demo.dim_customer
     dependsOn:
       - transfer_customer_pg_to_vertica
+  - name: transfer_lineitem_vertica_to_sqlserver
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_demo22_transfer_lineitem_vertica_to_sqlserver.json
+      source: vertica
+      target: Sqlserver
+      source_table: henkan_demo.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: TESTDB.dbo.lineitem
+    dependsOn: []
 config: {}
