@@ -1,0 +1,42 @@
+nodes:
+  - name: Hive_ddl
+    type: transform
+    config:
+      target: v360hive
+      sql_file: Demo/sql/f_prepare_demo_environment_hive_ddl.sql
+      explain_only: false
+    dependsOn: []
+  - name: Vertica_ddl
+    type: transform
+    config:
+      target: vertica
+      sql_file: Demo/sql/f_prepare_demo_environment_vertica_ddl.sql
+      explain_only: false
+    dependsOn: []
+  - name: transfer_lineitem_pg_to_sqlserver
+    type: transfer
+    config:
+      subtype: spark
+      conf: >-
+        Demo/conf/f_prepare_demo_environment_transfer_lineitem_pg_to_sqlserver.json
+      source: PGLab
+      target: Sqlserver
+      source_table: public.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dbo.lineitem
+    dependsOn: []
+  - name: transfer_customer_pg_to_sqlserver
+    type: transfer
+    config:
+      subtype: spark
+      conf: >-
+        Demo/conf/f_prepare_demo_environment_transfer_customer_pg_to_sqlserver.json
+      source: PGLab
+      target: Sqlserver
+      source_table: public.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dbo.customer
+    dependsOn: []
+config: {}
