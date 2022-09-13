@@ -57,3 +57,13 @@ CREATE TABLE henkan_demo.dim_customer
     is_current int
 ) order by customer_sk
 unsegmented all nodes;
+
+
+drop table if exists henkan_demo.lineitem_summ;
+
+CREATE TABLE henkan_demo.lineitem_summ
+(
+    l_orderkey int,
+    total_quantity numeric(15,2),
+    total_price numeric(15,2)
+);

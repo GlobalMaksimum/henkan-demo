@@ -82,3 +82,12 @@ CREATE TABLE
         is_deleted_in_source BIGINT,
         is_current           BIGINT
     );
+
+    drop table if exists henkan_demo.lineitem_summ;
+
+CREATE TABLE henkan_demo.lineitem_summ
+(
+    l_orderkey bigint,
+    total_quantity decimal(15,2),
+    total_price decimal(15,2)
+);
