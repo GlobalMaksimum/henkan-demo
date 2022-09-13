@@ -123,4 +123,49 @@ nodes:
       target_table: henkan_demo.dim_customer
     dependsOn:
       - transfer_customer_sqlserver_to_vertica
+  - name: transfer_customer_sqlserver_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Flows/conf/f_simplescd_transfer_customer_sqlserver_to_hive.json
+      source: Sqlserver
+      target: hive
+      source_table: testdb.dbo.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.customer
+    dependsOn: []
+  - name: scd_customer
+    type: scd
+    config:
+      subtype: spark
+      conf: Flows/conf/f_simplescd_scd_customer.json
+      target: hive
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: 10
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - transfer_customer_sqlserver_to_hive
+  - name: transfer_dim_customer_hive_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: Flows/conf/f_simplescd_transfer_dim_customer_hive_to_vertica.json
+      source: hive
+      target: vertica
+      source_table: henkan_demo.dim_customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - truncate_dim_customer
+  - name: truncate_dim_customer
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_simplescd_truncate_dim_customer.sql
+      explain_only: false
+    dependsOn:
+      - scd_customer
 config: {}
