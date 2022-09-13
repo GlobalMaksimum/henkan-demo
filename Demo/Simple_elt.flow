@@ -36,4 +36,16 @@ nodes:
     dependsOn:
       - transfer_customer_sqlserver_to_hive
       - transfer_lineitem_sqlserver_to_hive
+  - name: transfer_lineitem_pg_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_simple_elt_transfer_lineitem_pg_to_hive.json
+      source: PGLab
+      target: v360hive
+      explain_only: false
+      empty_source_check: true
+      source_table: public.lineitem
+      target_table: henkan_demo.lineitem
+    dependsOn: []
 config: {}
