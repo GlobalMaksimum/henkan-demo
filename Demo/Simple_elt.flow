@@ -1,0 +1,14 @@
+nodes:
+  - name: transfer_lineitem_sqlserver_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_simple_elt_transfer_lineitem_sqlserver_to_hive.json
+      source: Sqlserver
+      target: v360hive
+      source_table: henkan_demo.dbo.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.lineitem
+    dependsOn: []
+config: {}
