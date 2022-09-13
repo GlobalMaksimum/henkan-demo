@@ -29,6 +29,5 @@
       "target_column": "s_comment"
     }
   ],
-  "fetch_size": 600,
-  "truncate_load": true
+  "fetch_size": 600
 }

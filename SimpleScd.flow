@@ -74,12 +74,20 @@ nodes:
       empty_source_check: true
       target_table: henkan_demo.supplier
     dependsOn:
-      - Refresh_Parameters
+      - truncate_supplier
   - name: Truncate_table
     type: transform
     config:
       target: v360hive
       sql_file: sql/f_simplescd_truncate_table.sql
+      explain_only: false
+    dependsOn:
+      - Refresh_Parameters
+  - name: truncate_supplier
+    type: transform
+    config:
+      target: vertica
+      sql_file: sql/f_simplescd_truncate_supplier.sql
       explain_only: false
     dependsOn:
       - Refresh_Parameters

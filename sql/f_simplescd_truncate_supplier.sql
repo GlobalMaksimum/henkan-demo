@@ -1,0 +1,1 @@
+truncate table henkan_demo.supplier;
