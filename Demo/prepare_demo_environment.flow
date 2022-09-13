@@ -23,7 +23,7 @@ nodes:
       target: Sqlserver
       explain_only: false
       empty_source_check: true
-      target_table: henkan_demo.dbo.lineitem
+      target_table: testdb.dbo.lineitem
       sql_file: >-
         Demo/sql/f_prepare_demo_environment_transfer_lineitem_pg_to_sqlserver.sql
     dependsOn:
@@ -39,7 +39,7 @@ nodes:
       source_table: public.customer
       explain_only: false
       empty_source_check: true
-      target_table: henkan_demo.dbo.customer
+      target_table: testdb.dbo.customer
     dependsOn:
       - sqlserver_ddl
   - name: sqlserver_ddl
