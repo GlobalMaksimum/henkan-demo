@@ -26,7 +26,8 @@ nodes:
       target_table: henkan_demo.dbo.lineitem
       sql_file: >-
         Demo/sql/f_prepare_demo_environment_transfer_lineitem_pg_to_sqlserver.sql
-    dependsOn: []
+    dependsOn:
+      - sqlserver_ddl
   - name: transfer_customer_pg_to_sqlserver
     type: transfer
     config:
@@ -39,5 +40,13 @@ nodes:
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.dbo.customer
+    dependsOn:
+      - sqlserver_ddl
+  - name: sqlserver_ddl
+    type: transform
+    config:
+      target: Sqlserver
+      sql_file: Demo/sql/f_prepare_demo_environment_sqlserver_ddl.sql
+      explain_only: false
     dependsOn: []
 config: {}
