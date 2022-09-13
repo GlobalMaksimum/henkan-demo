@@ -1,1 +1,1 @@
-truncate table default.lineitem_summ;
+truncate table henkan_demo.lineitem_summ;
