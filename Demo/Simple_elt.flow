@@ -42,7 +42,7 @@ nodes:
       subtype: spark
       conf: Demo/conf/f_simple_elt_transfer_lineitem_pg_to_hive.json
       source: PGLab
-      target: v360hive
+      target: hive
       explain_only: false
       empty_source_check: true
       source_table: public.lineitem
