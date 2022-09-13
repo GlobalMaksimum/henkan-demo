@@ -4,12 +4,12 @@ nodes:
     config:
       subtype: spark
       conf: conf/f_hiveagg_transferlineitemtohive.json
-      source: PGLab
+      source: Sqlserver
       target: hive
       explain_only: false
       empty_source_check: true
-      target_table: default.lineitem
-      source_table: public.lineitem
+      target_table: henkan_demo.lineitem
+      source_table: testdb.dbo.lineitem
     dependsOn: []
   - name: AggLineItemSumm
     type: transform
@@ -28,8 +28,8 @@ nodes:
       target: vertica
       explain_only: false
       empty_source_check: true
-      source_table: default.lineitem_summ
       target_table: henkan_demo.lineitem_summ
+      source_table: henkan_demo.lineitem_summ
     dependsOn:
       - TruncateLineItemSummVertica
   - name: TruncateLineItemSumm
