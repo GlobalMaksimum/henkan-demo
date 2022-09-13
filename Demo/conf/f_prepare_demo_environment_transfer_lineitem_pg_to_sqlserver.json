@@ -72,6 +72,6 @@
     "num_partitions": 5,
     "drop_partition_column": true,
     "lower_bound": "0",
-    "upper_bound": "4"
+    "upper_bound": "10"
   }
 }
