@@ -11,4 +11,29 @@ nodes:
       empty_source_check: true
       target_table: henkan_demo.lineitem
     dependsOn: []
+  - name: transfer_customer_sqlserver_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_simple_elt_transfer_customer_sqlserver_to_hive.json
+      source: Sqlserver
+      target: v360hive
+      source_table: henkan_demo.dbo.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.customer
+    dependsOn: []
+  - name: generate_dim_customer
+    type: scd
+    config:
+      subtype: spark
+      conf: Demo/conf/f_simple_elt_generate_dim_customer.json
+      target: hive
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: 10
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - transfer_customer_sqlserver_to_hive
+      - transfer_lineitem_sqlserver_to_hive
 config: {}
