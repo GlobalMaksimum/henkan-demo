@@ -5,7 +5,7 @@ nodes:
       subtype: spark
       conf: Demo/conf/f_simple_elt_transfer_lineitem_sqlserver_to_hive.json
       source: Sqlserver
-      target: v360hive
+      target: hive
       source_table: henkan_demo.dbo.lineitem
       explain_only: false
       empty_source_check: true
@@ -17,7 +17,7 @@ nodes:
       subtype: spark
       conf: Demo/conf/f_simple_elt_transfer_customer_sqlserver_to_hive.json
       source: Sqlserver
-      target: v360hive
+      target: hive
       source_table: henkan_demo.dbo.customer
       explain_only: false
       empty_source_check: true

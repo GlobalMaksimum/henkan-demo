@@ -9,6 +9,7 @@ nodes:
       explain_only: false
       empty_source_check: true
       target_table: default.lineitem
+      source_table: public.lineitem
     dependsOn: []
   - name: AggLineItemSumm
     type: transform
