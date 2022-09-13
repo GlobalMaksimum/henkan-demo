@@ -21,10 +21,11 @@ nodes:
         Demo/conf/f_prepare_demo_environment_transfer_lineitem_pg_to_sqlserver.json
       source: PGLab
       target: Sqlserver
-      source_table: public.lineitem
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.dbo.lineitem
+      sql_file: >-
+        Demo/sql/f_prepare_demo_environment_transfer_lineitem_pg_to_sqlserver.sql
     dependsOn: []
   - name: transfer_customer_pg_to_sqlserver
     type: transfer

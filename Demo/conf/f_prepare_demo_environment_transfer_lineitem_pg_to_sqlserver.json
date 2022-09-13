@@ -66,5 +66,11 @@
     }
   ],
   "fetch_size": 600,
-  "truncate_load": true
+  "truncate_load": true,
+  "partition_info": {
+    "column_name": "splitter",
+    "num_partitions": 5,
+    "lower_bound": "0",
+    "upper_bound": "4"
+  }
 }
