@@ -79,4 +79,25 @@ nodes:
       target_table: extr_pg_public.supplier
     dependsOn:
       - truncate_table_extr_pg_public_supplier
+  - name: truncate_table_extr_pg_public_customer
+    type: transform
+    config:
+      target: vertica
+      sql_file: >-
+        Flows/sql/s_extr_pg_to_vertica_truncate_table_extr_pg_public_customer.sql
+      explain_only: false
+    dependsOn: []
+  - name: transfer_customer_pg_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: Flows/conf/s_extr_pg_to_vertica_transfer_customer_pg_to_vertica.json
+      source: PGLab
+      target: vertica
+      source_table: public.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: extr_pg_public.customer
+    dependsOn:
+      - truncate_table_extr_pg_public_customer
 config: {}
