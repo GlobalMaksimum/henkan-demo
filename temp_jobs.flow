@@ -1,0 +1,26 @@
+nodes:
+  - name: transfer_lineitem_pg_to_sqlserver
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_temp_jobs_transfer_lineitem_pg_to_sqlserver.json
+      source: PGLab
+      target: Sqlserver
+      source_table: public.lineitem
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dbo.lineitem
+    dependsOn: []
+  - name: transfer_customer_pg_to_sqlserver
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_temp_jobs_transfer_customer_pg_to_sqlserver.json
+      source: PGLab
+      target: Sqlserver
+      source_table: public.customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dbo.customer
+    dependsOn: []
+config: {}

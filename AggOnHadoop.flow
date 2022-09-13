@@ -6,7 +6,6 @@ nodes:
       conf: conf/f_hiveagg_transferlineitemtohive.json
       source: PGLab
       target: hive
-      source_table: lineitem
       explain_only: false
       empty_source_check: true
       target_table: default.lineitem
