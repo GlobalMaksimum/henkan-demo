@@ -69,9 +69,9 @@
   "truncate_load": true,
   "partition_info": {
     "column_name": "splitter",
-    "num_partitions": 5,
+    "num_partitions": 10,
     "drop_partition_column": true,
     "lower_bound": "0",
-    "upper_bound": "5"
+    "upper_bound": "10"
   }
 }

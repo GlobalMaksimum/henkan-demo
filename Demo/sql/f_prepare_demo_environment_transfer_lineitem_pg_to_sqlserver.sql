@@ -1,1 +1,1 @@
-(select a.*,mod(l_orderkey,5) as splitter from public.lineitem a) TBL
+(select a.*,mod(l_orderkey,10) as splitter from public.lineitem a) TBL
