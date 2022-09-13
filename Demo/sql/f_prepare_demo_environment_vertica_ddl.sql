@@ -34,3 +34,26 @@ CREATE TABLE henkan_demo.customer
     c_comment varchar(117) NOT NULL
 ) order by c_custkey
 unsegmented all nodes;
+
+drop table if exists henkan_demo.dim_customer;
+CREATE TABLE henkan_demo.dim_customer
+(
+    customer_sk int,
+    c_custkey int NOT NULL,
+    c_name varchar(25) NOT NULL,
+    c_address varchar(40) NOT NULL,
+    c_nationkey int NOT NULL,
+    c_phone char(15) NOT NULL,
+    c_acctbal numeric(15,2) NOT NULL,
+    c_mktsegment char(10) NOT NULL,
+    c_comment varchar(117) NOT NULL,
+    effective_date timestamp,
+    expiry_date timestamp,
+    etl_date_create timestamp,
+    etl_date_update timestamp,
+    etl_id_create int,
+    etl_id_update int,
+    is_deleted_in_source int,
+    is_current int
+) order by customer_sk
+unsegmented all nodes;
