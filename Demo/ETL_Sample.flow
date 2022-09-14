@@ -1,0 +1,89 @@
+nodes:
+  - name: transfer_lineitem_sqlserver_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_etl_sample_transfer_lineitem_sqlserver_to_hive.json
+      source: Sqlserver
+      target: hive
+      source_table: TESTDB.dbo.lineitem
+      explain_only: false
+      empty_source_check: 'true'
+      target_table: henkan_demo.lineitem
+    dependsOn: []
+  - name: transfer_customer_sqlserver_to_hive
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_etl_sample_transfer_customer_sqlserver_to_hive.json
+      source: Sqlserver
+      target: hive
+      source_table: TESTDB.dbo.customer
+      explain_only: false
+      empty_source_check: 'true'
+      target_table: henkan_demo.customer
+    dependsOn:
+      - transfer_lineitem_sqlserver_to_hive
+  - name: generate_customer_scd
+    type: scd
+    config:
+      subtype: spark
+      conf: Demo/conf/f_etl_sample_generate_customer_scd.json
+      target: hive
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: '10'
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - transfer_customer_sqlserver_to_hive
+  - name: truncate_table_dim_customer_on_vertica
+    type: transform
+    config:
+      target: vertica
+      sql_file: Demo/sql/f_etl_sample_truncate_table_dim_customer_on_vertica.sql
+      explain_only: 'false'
+    dependsOn:
+      - generate_customer_scd
+  - name: transfer_dim_customer_hive_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_etl_sample_transfer_dim_customer_hive_to_vertica.json
+      source: hive
+      target: vertica
+      source_table: henkan_demo.dim_customer
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - truncate_table_dim_customer_on_vertica
+  - name: transform_lineitem_agg
+    type: transform
+    config:
+      target: v360hive
+      sql_file: Demo/sql/f_etl_sample_transform_lineitem_agg.sql
+      explain_only: false
+    dependsOn:
+      - transfer_lineitem_sqlserver_to_hive
+  - name: truncate_lineitem_summ_on_vertica
+    type: transform
+    config:
+      target: vertica
+      sql_file: Demo/sql/f_etl_sample_truncate_lineitem_summ_on_vertica.sql
+      explain_only: false
+    dependsOn:
+      - transform_lineitem_agg
+  - name: transfer_lineitem_summ_hive_to_vertica
+    type: transfer
+    config:
+      subtype: spark
+      conf: Demo/conf/f_etl_sample_transfer_lineitem_summ_hive_to_vertica.json
+      source: hive
+      target: vertica
+      source_table: henkan_demo.lineitem_summ
+      explain_only: false
+      empty_source_check: true
+      target_table: henkan_demo.lineitem_summ
+    dependsOn:
+      - truncate_lineitem_summ_on_vertica
+config: {}
