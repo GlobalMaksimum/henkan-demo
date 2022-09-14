@@ -6,11 +6,10 @@ nodes:
       conf: Demo/conf/s_extr_transfer_lineitem_sqlserver_to_vertica.json
       source: Sqlserver
       target: vertica
-      source_table: transfer_lineitem_sqlserver_to_verticaTable
-      sql_file: Demo/sql/s_extr_transfer_lineitem_sqlserver_to_vertica.sql
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.lineitem
+      sql_file: Demo/sql/s_extr_transfer_lineitem_sqlserver_to_vertica.sql
     dependsOn: []
   - name: transfer_customer_sqlserver_to_vertica
     type: transfer
