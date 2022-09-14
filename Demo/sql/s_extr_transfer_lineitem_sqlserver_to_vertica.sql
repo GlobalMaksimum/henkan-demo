@@ -1,0 +1,1 @@
+(select a.*,l_orderkey%5 as  splitter from TESTDB.dbo.lineitem a ) TBL

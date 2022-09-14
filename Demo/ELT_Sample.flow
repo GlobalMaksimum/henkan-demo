@@ -1,0 +1,27 @@
+nodes:
+  - name: Extr
+    type: subflow
+    config:
+      flow.name: Extr.subflow
+    dependsOn: []
+  - name: scd_dim_customer
+    type: scd
+    config:
+      subtype: indb
+      conf: Demo/conf/f_elt_sample_scd_dim_customer.json
+      target: vertica
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: 10
+      target_table: henkan_demo.dim_customer
+    dependsOn:
+      - Extr
+  - name: transform_lineitem_summ
+    type: transform
+    config:
+      target: vertica
+      sql_file: Demo/sql/f_elt_sample_transform_lineitem_summ.sql
+      explain_only: false
+    dependsOn:
+      - Extr
+config: {}
