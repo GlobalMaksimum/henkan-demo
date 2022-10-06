@@ -1,0 +1,1 @@
+(select * from odi.cdr2 where rownum<1000000) tbl
