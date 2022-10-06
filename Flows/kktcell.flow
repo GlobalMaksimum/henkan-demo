@@ -23,4 +23,19 @@ nodes:
       target_table: kktcell.cdr
       sql_file: Flows/sql/f_kktcell_transfer_cdr_to_oracle.sql
     dependsOn: []
+  - name: param_max_cdr_ts
+    type: parameter
+    config:
+      param_name: max_cdr_ts
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_param_max_cdr_ts.sql
+    dependsOn: []
+  - name: load_cdr_oracle_to_vertica
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_load_cdr_oracle_to_vertica.sql
+      explain_only: false
+    dependsOn:
+      - param_max_cdr_ts
 config: {}
