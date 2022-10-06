@@ -1,0 +1,14 @@
+nodes:
+  - name: transfer_kktcell_cdr
+    type: transfer
+    config:
+      subtype: spark
+      conf: Flows/conf/f_kktcell_transfer_kktcell_cdr.json
+      source: vertica
+      target: Oracle_hey
+      explain_only: false
+      empty_source_check: true
+      target_table: odi.cdr
+      sql_file: Flows/sql/f_kktcell_transfer_kktcell_cdr.sql
+    dependsOn: []
+config: {}
