@@ -1,1 +1,1 @@
-(select a.*,mod(call_id,6) as splitter from odi.cdr2 a ) tbl
+(select a.*,mod(call_id,6) as splitter from kktcell.cdr_day0 a ) tbl
