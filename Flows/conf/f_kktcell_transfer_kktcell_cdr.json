@@ -384,6 +384,6 @@
     "num_partitions": 6,
     "drop_partition_column": true,
     "lower_bound": "0",
-    "upper_bound": "5"
+    "upper_bound": "6"
   }
 }
