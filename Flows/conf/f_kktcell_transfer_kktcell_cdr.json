@@ -29,8 +29,8 @@
       "target_column": "ACTIVE_SPG_RTPL_ID"
     },
     {
-      "source_column": "add_price_$",
-      "target_column": "add_price_$"
+      "source_column": "add_price",
+      "target_column": "add_price"
     },
     {
       "source_column": "b_area",
@@ -73,8 +73,8 @@
       "target_column": "CAMP_ID"
     },
     {
-      "source_column": "charges_$",
-      "target_column": "charges_$"
+      "source_column": "charges",
+      "target_column": "charges"
     },
     {
       "source_column": "circuit_in",
@@ -125,8 +125,8 @@
       "target_column": "ERR_CODE"
     },
     {
-      "source_column": "expense_#",
-      "target_column": "expense_#"
+      "source_column": "expense",
+      "target_column": "expense"
     },
     {
       "source_column": "faft_faft_id",
@@ -169,20 +169,20 @@
       "target_column": "IMSI"
     },
     {
-      "source_column": "in_balance_$",
-      "target_column": "in_balance_$"
+      "source_column": "in_balance",
+      "target_column": "in_balance"
     },
     {
-      "source_column": "in_out_free_phone_#",
-      "target_column": "in_out_free_phone_#"
+      "source_column": "in_out_free_phone",
+      "target_column": "in_out_free_phone"
     },
     {
-      "source_column": "incoming_roam_cost_$",
-      "target_column": "incoming_roam_cost_$"
+      "source_column": "incoming_roam_cost",
+      "target_column": "incoming_roam_cost"
     },
     {
-      "source_column": "incoming_roam_price_$",
-      "target_column": "incoming_roam_price_$"
+      "source_column": "incoming_roam_price",
+      "target_column": "incoming_roam_price"
     },
     {
       "source_column": "insert_date",
@@ -197,8 +197,8 @@
       "target_column": "MAIN_CLNT_ID"
     },
     {
-      "source_column": "mark_up_#",
-      "target_column": "mark_up_#"
+      "source_column": "mark_up",
+      "target_column": "mark_up"
     },
     {
       "source_column": "minuts",
@@ -229,16 +229,16 @@
       "target_column": "PACKAGE_ID"
     },
     {
-      "source_column": "price_by_call_pay_phone_$",
-      "target_column": "price_by_call_pay_phone_$"
+      "source_column": "price_by_call_pay_phone",
+      "target_column": "price_by_call_pay_phone"
     },
     {
-      "source_column": "price_by_min_pay_phone_$",
-      "target_column": "price_by_min_pay_phone_$"
+      "source_column": "price_by_min_pay_phone",
+      "target_column": "price_by_min_pay_phone"
     },
     {
-      "source_column": "price_without_discounts_$",
-      "target_column": "price_without_discounts_$"
+      "source_column": "price_without_discounts",
+      "target_column": "price_without_discounts"
     },
     {
       "source_column": "pset_pset_id",
@@ -329,16 +329,16 @@
       "target_column": "TNAME"
     },
     {
-      "source_column": "traf_by_dir_#",
-      "target_column": "traf_by_dir_#"
+      "source_column": "traf_by_dir",
+      "target_column": "traf_by_dir"
     },
     {
-      "source_column": "trafic_by_dir_price_$",
-      "target_column": "trafic_by_dir_price_$"
+      "source_column": "trafic_by_dir_price",
+      "target_column": "trafic_by_dir_price"
     },
     {
-      "source_column": "trafic_price_$",
-      "target_column": "trafic_price_$"
+      "source_column": "trafic_price",
+      "target_column": "trafic_price"
     },
     {
       "source_column": "type_1_ser",

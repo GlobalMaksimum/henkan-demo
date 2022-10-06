@@ -8,7 +8,7 @@ nodes:
       target: Oracle_hey
       explain_only: false
       empty_source_check: true
-      target_table: odi.cdr
+      target_table: odi.cdr2
       sql_file: Flows/sql/f_kktcell_transfer_kktcell_cdr.sql
     dependsOn: []
 config: {}
