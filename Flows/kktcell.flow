@@ -11,16 +11,16 @@ nodes:
       target_table: kktcell.cdr_day1
       sql_file: Flows/sql/f_kktcell_transfer_cdr_day1_to_oracle.sql
     dependsOn: []
-  - name: transfer_cdr_day0_to_oracle
+  - name: transfer_cdr_to_oracle
     type: transfer
     config:
       subtype: spark
-      conf: Flows/conf/f_kktcell_transfer_cdr_day0_to_oracle.json
+      conf: Flows/conf/f_kktcell_transfer_cdr_to_oracle.json
       source: vertica
       target: Oracle_hey
       explain_only: false
       empty_source_check: true
-      target_table: kktcell.cdr_day0
-      sql_file: Flows/sql/f_kktcell_transfer_cdr_day0_to_oracle.sql
+      target_table: kktcell.cdr
+      sql_file: Flows/sql/f_kktcell_transfer_cdr_to_oracle.sql
     dependsOn: []
 config: {}

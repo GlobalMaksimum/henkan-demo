@@ -1,0 +1,1 @@
+(select a.*,mod(call_id,3) as splitter from kktcell.cdr_day0 a ) tbl
