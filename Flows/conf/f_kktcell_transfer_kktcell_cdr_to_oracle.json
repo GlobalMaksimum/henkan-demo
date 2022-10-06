@@ -101,7 +101,7 @@
       "target_column": "DCTV_DCTV_ID"
     },
     {
-      "source_column": "dd_type",
+      "source_column": "'dd_type_#'",
       "target_column": "DD_TYPE"
     },
     {
