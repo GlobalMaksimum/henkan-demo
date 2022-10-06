@@ -33,10 +33,6 @@
       "target_column": "DIALED"
     },
     {
-      "source_column": "start_time",
-      "target_column": "START_TIME"
-    },
-    {
       "source_column": "duration",
       "target_column": "DURATION"
     },
@@ -119,10 +115,6 @@
     {
       "source_column": "filename",
       "target_column": "FILENAME"
-    },
-    {
-      "source_column": "insert_date",
-      "target_column": "INSERT_DATE"
     },
     {
       "source_column": "flsn_flsn_id",
