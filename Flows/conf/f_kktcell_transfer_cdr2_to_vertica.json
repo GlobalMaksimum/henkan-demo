@@ -377,5 +377,6 @@
       "target_column": "zone_zone_id"
     }
   ],
-  "fetch_size": 600
+  "fetch_size": 600,
+  "truncate_load": true
 }
