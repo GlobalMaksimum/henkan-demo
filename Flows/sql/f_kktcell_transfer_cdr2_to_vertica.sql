@@ -1,1 +1,1 @@
-(select * from odi.cdr2) tbl
+(select a.*,mod(call_id,10) as splitter from odi.cdr2 a ) tbl
