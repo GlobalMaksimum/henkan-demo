@@ -1,8 +1,376 @@
 {
   "column_mappings": [
     {
+      "source_column": "A_AREA",
+      "target_column": "a_area"
+    },
+    {
+      "source_column": "A_CELL",
+      "target_column": "a_cell"
+    },
+    {
+      "source_column": "A_FORWARD",
+      "target_column": "a_forward"
+    },
+    {
+      "source_column": "ACCEPT_TAX_METHOD",
+      "target_column": "accept_tax_method"
+    },
+    {
+      "source_column": "ACTION",
+      "target_column": "action"
+    },
+    {
+      "source_column": "ACTIVE_RTPL_ID",
+      "target_column": "active_rtpl_id"
+    },
+    {
+      "source_column": "ACTIVE_SPG_RTPL_ID",
+      "target_column": "active_spg_rtpl_id"
+    },
+    {
       "source_column": "add_price",
       "target_column": "add_price"
+    },
+    {
+      "source_column": "B_AREA",
+      "target_column": "b_area"
+    },
+    {
+      "source_column": "B_CELL",
+      "target_column": "b_cell"
+    },
+    {
+      "source_column": "BILL_BILL_ID",
+      "target_column": "bill_bill_id"
+    },
+    {
+      "source_column": "BLGR_BLGR_ID",
+      "target_column": "blgr_blgr_id"
+    },
+    {
+      "source_column": "BRT_SESSION_ID",
+      "target_column": "brt_session_id"
+    },
+    {
+      "source_column": "CALL_ID",
+      "target_column": "call_id"
+    },
+    {
+      "source_column": "CALL_TYPE",
+      "target_column": "call_type"
+    },
+    {
+      "source_column": "CALLED_NUMBER",
+      "target_column": "called_number"
+    },
+    {
+      "source_column": "CALLED_NUMBER_TON",
+      "target_column": "called_number_ton"
+    },
+    {
+      "source_column": "CAMP_ID",
+      "target_column": "camp_id"
+    },
+    {
+      "source_column": "charges",
+      "target_column": "charges"
+    },
+    {
+      "source_column": "CIRCUIT_IN",
+      "target_column": "circuit_in"
+    },
+    {
+      "source_column": "CIRCUIT_OUT",
+      "target_column": "circuit_out"
+    },
+    {
+      "source_column": "CLCR_CLCR_ID",
+      "target_column": "clcr_clcr_id"
+    },
+    {
+      "source_column": "CODE_1_SER",
+      "target_column": "code_1_ser"
+    },
+    {
+      "source_column": "CODE_2_SER",
+      "target_column": "code_2_ser"
+    },
+    {
+      "source_column": "DCTV_DCTV_ID",
+      "target_column": "dctv_dctv_id"
+    },
+    {
+      "source_column": "DD_TYPE",
+      "target_column": "dd_type"
+    },
+    {
+      "source_column": "DETG_DETG_ID",
+      "target_column": "detg_detg_id"
+    },
+    {
+      "source_column": "DIALED",
+      "target_column": "dialed"
+    },
+    {
+      "source_column": "DRCT_DRCT_ID",
+      "target_column": "drct_drct_id"
+    },
+    {
+      "source_column": "DURATION",
+      "target_column": "duration"
+    },
+    {
+      "source_column": "ERR_CODE",
+      "target_column": "err_code"
+    },
+    {
+      "source_column": "expense",
+      "target_column": "expense"
+    },
+    {
+      "source_column": "FAFT_FAFT_ID",
+      "target_column": "faft_faft_id"
+    },
+    {
+      "source_column": "FF_ID",
+      "target_column": "ff_id"
+    },
+    {
+      "source_column": "FILENAME",
+      "target_column": "filename"
+    },
+    {
+      "source_column": "FLSN_FLSN_ID",
+      "target_column": "flsn_flsn_id"
+    },
+    {
+      "source_column": "GPRS_DATA_INCOMING_VOLUME",
+      "target_column": "gprs_data_incoming_volume"
+    },
+    {
+      "source_column": "GPRS_DATA_OUTGOING_VOLUME",
+      "target_column": "gprs_data_outgoing_volume"
+    },
+    {
+      "source_column": "ID_SIMPLE_DIRECTION",
+      "target_column": "id_simple_direction"
+    },
+    {
+      "source_column": "ID_SUB_DIRECTION",
+      "target_column": "id_sub_direction"
+    },
+    {
+      "source_column": "IMEI",
+      "target_column": "imei"
+    },
+    {
+      "source_column": "IMSI",
+      "target_column": "imsi"
+    },
+    {
+      "source_column": "in_balance",
+      "target_column": "in_balance"
+    },
+    {
+      "source_column": "in_out_free_phone",
+      "target_column": "in_out_free_phone"
+    },
+    {
+      "source_column": "incoming_roam_cost",
+      "target_column": "incoming_roam_cost"
+    },
+    {
+      "source_column": "incoming_roam_price",
+      "target_column": "incoming_roam_price"
+    },
+    {
+      "source_column": "INSERT_DATE",
+      "target_column": "insert_date"
+    },
+    {
+      "source_column": "LCAL_LCAL_ID",
+      "target_column": "lcal_lcal_id"
+    },
+    {
+      "source_column": "MAIN_CLNT_ID",
+      "target_column": "main_clnt_id"
+    },
+    {
+      "source_column": "mark_up",
+      "target_column": "mark_up"
+    },
+    {
+      "source_column": "MINUTS",
+      "target_column": "minuts"
+    },
+    {
+      "source_column": "MISC_ID",
+      "target_column": "misc_id"
+    },
+    {
+      "source_column": "MS_CLASS",
+      "target_column": "ms_class"
+    },
+    {
+      "source_column": "MSISDN",
+      "target_column": "msisdn"
+    },
+    {
+      "source_column": "MUNT_MUNT_ID",
+      "target_column": "munt_munt_id"
+    },
+    {
+      "source_column": "PACK_PACK_ID",
+      "target_column": "pack_pack_id"
+    },
+    {
+      "source_column": "PACKAGE_ID",
+      "target_column": "package_id"
+    },
+    {
+      "source_column": "price_by_call_pay_phone",
+      "target_column": "price_by_call_pay_phone"
+    },
+    {
+      "source_column": "price_by_min_pay_phone",
+      "target_column": "price_by_min_pay_phone"
+    },
+    {
+      "source_column": "price_without_discounts",
+      "target_column": "price_without_discounts"
+    },
+    {
+      "source_column": "PSET_PSET_ID",
+      "target_column": "pset_pset_id"
+    },
+    {
+      "source_column": "REASON",
+      "target_column": "reason"
+    },
+    {
+      "source_column": "REC_NUMBER",
+      "target_column": "rec_number"
+    },
+    {
+      "source_column": "REC_SUB_NUMBER",
+      "target_column": "rec_sub_number"
+    },
+    {
+      "source_column": "REC_TYPE",
+      "target_column": "rec_type"
+    },
+    {
+      "source_column": "REVENUE_YEARMONTH",
+      "target_column": "revenue_yearmonth"
+    },
+    {
+      "source_column": "RPDR_RPDR_ID",
+      "target_column": "rpdr_rpdr_id"
+    },
+    {
+      "source_column": "RSTA_RSTA_ID",
+      "target_column": "rsta_rsta_id"
+    },
+    {
+      "source_column": "RTGR_RTGR_ID",
+      "target_column": "rtgr_rtgr_id"
+    },
+    {
+      "source_column": "RTPL_RTPL_ID",
+      "target_column": "rtpl_rtpl_id"
+    },
+    {
+      "source_column": "SERV_CODE",
+      "target_column": "serv_code"
+    },
+    {
+      "source_column": "SPG_RTPL_ID",
+      "target_column": "spg_rtpl_id"
+    },
+    {
+      "source_column": "SRLS_SRLS_ID",
+      "target_column": "srls_srls_id"
+    },
+    {
+      "source_column": "START_TIME",
+      "target_column": "start_time"
+    },
+    {
+      "source_column": "SUBS_DISCOUNT_THREAD_PERIOD",
+      "target_column": "subs_discount_thread_period"
+    },
+    {
+      "source_column": "SUBS_SUBS_ID",
+      "target_column": "subs_subs_id"
+    },
+    {
+      "source_column": "TARIFF_CLASS",
+      "target_column": "tariff_class"
+    },
+    {
+      "source_column": "TAX",
+      "target_column": "tax"
+    },
+    {
+      "source_column": "TEST_HAT",
+      "target_column": "test_hat"
+    },
+    {
+      "source_column": "TMCL_TMCL_ID",
+      "target_column": "tmcl_tmcl_id"
+    },
+    {
+      "source_column": "TNAME",
+      "target_column": "tname"
+    },
+    {
+      "source_column": "traf_by_dir",
+      "target_column": "traf_by_dir"
+    },
+    {
+      "source_column": "trafic_by_dir_price",
+      "target_column": "trafic_by_dir_price"
+    },
+    {
+      "source_column": "trafic_price",
+      "target_column": "trafic_price"
+    },
+    {
+      "source_column": "TYPE_1_SER",
+      "target_column": "type_1_ser"
+    },
+    {
+      "source_column": "TYPE_2_SER",
+      "target_column": "type_2_ser"
+    },
+    {
+      "source_column": "USER_DATA",
+      "target_column": "user_data"
+    },
+    {
+      "source_column": "USER_TAG",
+      "target_column": "user_tag"
+    },
+    {
+      "source_column": "USGD_USGD_ID",
+      "target_column": "usgd_usgd_id"
+    },
+    {
+      "source_column": "VOLUME_MINUTES",
+      "target_column": "volume_minutes"
+    },
+    {
+      "source_column": "XPNS_XPNS_ID",
+      "target_column": "xpns_xpns_id"
+    },
+    {
+      "source_column": "ZNTP_ZNTP_ID",
+      "target_column": "zntp_zntp_id"
+    },
+    {
+      "source_column": "ZONE_ZONE_ID",
+      "target_column": "zone_zone_id"
     }
   ],
   "fetch_size": 600
