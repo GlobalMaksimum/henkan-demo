@@ -305,6 +305,10 @@
       "target_column": "subs_subs_id"
     },
     {
+      "source_column": "SUCCCESS",
+      "target_column": "succcess"
+    },
+    {
       "source_column": "TARIFF_CLASS",
       "target_column": "tariff_class"
     },
