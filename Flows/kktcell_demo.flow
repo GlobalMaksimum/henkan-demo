@@ -1,0 +1,41 @@
+nodes:
+  - name: transfer_cdr_p1
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_demo_transfer_cdr_p1.sql
+      explain_only: false
+    dependsOn:
+      - set_param_max_cdr_ts
+  - name: transfer_cdr_p2
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_demo_transfer_cdr_p2.sql
+      explain_only: false
+    dependsOn:
+      - set_param_max_cdr_ts
+  - name: transfer_cdr_p3
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_demo_transfer_cdr_p3.sql
+      explain_only: false
+    dependsOn:
+      - set_param_max_cdr_ts
+  - name: transfer_cdr_p4
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_demo_transfer_cdr_p4.sql
+      explain_only: false
+    dependsOn:
+      - set_param_max_cdr_ts
+  - name: set_param_max_cdr_ts
+    type: parameter
+    config:
+      param_name: max_cdr_ts
+      target: vertica
+      sql_file: Flows/sql/f_kktcell_demo_set_param_max_cdr_ts.sql
+    dependsOn: []
+config: {}
