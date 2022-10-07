@@ -38,4 +38,15 @@ nodes:
       target: vertica
       sql_file: Flows/sql/f_kktcell_demo_set_param_max_cdr_ts.sql
     dependsOn: []
+  - name: dim_customer
+    type: scd
+    config:
+      subtype: indb
+      conf: Flows/conf/f_kktcell_demo_dim_customer.json
+      target: vertica
+      explain_only: false
+      source_table: henkan_demo.customer
+      change_tolerance: 10
+      target_table: henkan_demo.dim_customer
+    dependsOn: []
 config: {}
