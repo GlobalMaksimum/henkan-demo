@@ -1,0 +1,1 @@
+(select * from public.customer where c_custkey>${max_cust_key}) TBL
