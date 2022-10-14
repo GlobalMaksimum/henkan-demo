@@ -1,0 +1,9 @@
+nodes:
+  - name: load_cdr
+    type: transform
+    config:
+      target: vertica
+      sql_file: Flows/sql/f_yemek_sepeti_load_cdr.sql
+      explain_only: false
+    dependsOn: []
+config: {}
