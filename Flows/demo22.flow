@@ -20,8 +20,8 @@ nodes:
       target: vertica
       explain_only: false
       empty_source_check: true
-      sql_file: sql/f_demo22_transfer_customer_pg_to_vertica.sql
       target_table: henkan_demo.customer
+      source_table: public.customer
     dependsOn:
       - truncate_customer
   - name: truncate_customer
@@ -39,9 +39,9 @@ nodes:
       conf: conf/f_demo22_scd_dim_customer.json
       target: vertica
       explain_only: false
-      source_table: henkan_demo.customer
       change_tolerance: '10'
       target_table: henkan_demo.dim_customer
+      source_table: henkan_demo.customer
     dependsOn:
       - transfer_customer_pg_to_vertica
   - name: transfer_lineitem_vertica_to_sqlserver
