@@ -6,9 +6,9 @@ nodes:
       conf: conf/f_scd_supplierdimension.json
       target: hive
       explain_only: 'false'
-      source_table: default.supplier
+      source_table: test.supplier
       change_tolerance: '100'
-      target_table: default.dim_supplier
+      target_table: test.dim_supplier
     dependsOn:
       - Transfer_Supplier
   - name: Transfer_Supplier
@@ -20,8 +20,8 @@ nodes:
       target: hive
       explain_only: 'false'
       empty_source_check: 'false'
-      target_table: default.supplier
-      source_table: source_supplier
+      target_table: test.supplier
+      source_table: public.source_supplier
     dependsOn:
       - Truncate_table
   - name: TruncateDimOnVertica
@@ -39,7 +39,7 @@ nodes:
       conf: conf/f_scd_loadintovertica.json
       source: hive
       target: vertica
-      source_table: default.dim_supplier
+      source_table: test.dim_supplier
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.dim_supplier
@@ -105,10 +105,10 @@ nodes:
       conf: Flows/conf/f_simplescd_transfer_customer_sqlserver_to_vertica.json
       source: Sqlserver
       target: vertica
-      source_table: henkan_demo.dbo.customer
       explain_only: false
       empty_source_check: true
       target_table: henkan_demo.customer
+      source_table: TESTDB.dbo.customer
     dependsOn:
       - truncate_henkan_demo.customer
   - name: dim_customer

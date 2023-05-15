@@ -1,0 +1,29 @@
+nodes:
+  - name: transfer_sandbox_to_vertica_lab_supplier
+    type: transfer
+    config:
+      subtype: spark
+      conf: >-
+        Flows/conf/f_transfer_vertica_lab_to_all_transfer_sandbox_to_vertica_lab_supplier.json
+      source: tcsandbox
+      target: PGLab
+      explain_only: false
+      empty_source_check: true
+      source_table: henkan_demo.supplier
+      target_table: public.supplier
+    dependsOn: []
+  - name: transfer_sandbox_to_vertica_lab_source_supplier
+    type: transfer
+    config:
+      subtype: spark
+      conf: >-
+        Flows/conf/f_transfer_vertica_lab_to_all_transfer_sandbox_to_vertica_lab_source_supplier.json
+      source: tcsandbox
+      target: PGLab
+      explain_only: false
+      empty_source_check: true
+      source_table: henkan_demo.supplier
+      target_table: public.source_supplier
+    dependsOn:
+      - transfer_sandbox_to_vertica_lab_supplier
+config: {}

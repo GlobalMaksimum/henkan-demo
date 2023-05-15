@@ -1,1 +1,1 @@
-truncate table default.supplier;
+truncate table test.supplier;
