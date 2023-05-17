@@ -73,7 +73,7 @@ nodes:
   - name: Truncate-table
     type: transform
     config:
-      target: v360hive
+      target: hive
       sql_file: sql/f_SimpleScd_truncate-table.sql
       explain_only: false
     dependsOn:
