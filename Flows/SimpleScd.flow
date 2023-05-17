@@ -81,7 +81,7 @@ nodes:
   - name: truncate-supplier
     type: transform
     config:
-      target: vertica
+      target: tcsandbox
       sql_file: sql/f_SimpleScd_truncate-supplier.sql
       explain_only: false
     dependsOn:
