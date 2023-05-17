@@ -10,12 +10,12 @@ nodes:
       change_tolerance: '100'
       target_table: test.dim_supplier
     dependsOn:
-      - Transfer_Supplier
-  - name: Transfer_Supplier
+      - Transfer-Supplier
+  - name: Transfer-Supplier
     type: transfer
     config:
       subtype: spark
-      conf: conf/f_scd_transfer_supplier.json
+      conf: conf/f_SimpleScd_transfer-supplier.json
       source: PGLab
       target: hive
       explain_only: 'false'
@@ -23,7 +23,7 @@ nodes:
       target_table: test.supplier
       source_table: public.source_supplier
     dependsOn:
-      - Truncate_table
+      - Truncate-table
   - name: TruncateDimOnVertica
     type: transform
     config:
@@ -45,11 +45,6 @@ nodes:
       target_table: henkan_demo.dim_supplier
     dependsOn:
       - TruncateDimOnVertica
-  - name: Refresh_Parameters
-    type: subflow
-    config:
-      flow.name: Refresh_Parameters.subflow
-    dependsOn: []
   - name: ScdIndb
     type: scd
     config:
@@ -74,35 +69,35 @@ nodes:
       empty_source_check: true
       target_table: henkan_demo.supplier
     dependsOn:
-      - truncate_supplier
-  - name: Truncate_table
+      - truncate-supplier
+  - name: Truncate-table
     type: transform
     config:
       target: v360hive
-      sql_file: sql/f_simplescd_truncate_table.sql
+      sql_file: sql/f_SimpleScd_truncate-table.sql
       explain_only: false
     dependsOn:
-      - Refresh_Parameters
-  - name: truncate_supplier
+      - Refresh-Parameters
+  - name: truncate-supplier
     type: transform
     config:
       target: vertica
-      sql_file: sql/f_simplescd_truncate_supplier.sql
+      sql_file: sql/f_SimpleScd_truncate-supplier.sql
       explain_only: false
     dependsOn:
-      - Refresh_Parameters
-  - name: truncate_henkan_demo.customer
+      - Refresh-Parameters
+  - name: truncate-henkan-demo.customer
     type: transform
     config:
       target: tcsandbox
-      sql_file: Flows/sql/f_simplescd_truncate_henkan_demo.customer.sql
+      sql_file: Flows/sql/f_SimpleScd_truncate-henkan-demo.customer.sql
       explain_only: false
     dependsOn: []
-  - name: transfer_customer_sqlserver_to_vertica
+  - name: transfer-customer-sqlserver-to-vertica
     type: transfer
     config:
       subtype: spark
-      conf: Flows/conf/f_simplescd_transfer_customer_sqlserver_to_vertica.json
+      conf: Flows/conf/f_SimpleScd_transfer-customer-sqlserver-to-vertica.json
       source: Sqlserver
       target: tcsandbox
       explain_only: false
@@ -110,24 +105,24 @@ nodes:
       target_table: henkan_demo.customer
       source_table: TESTDB.dbo.customer
     dependsOn:
-      - truncate_henkan_demo.customer
-  - name: dim_customer
+      - truncate-henkan-demo.customer
+  - name: dim-customer
     type: scd
     config:
       subtype: indb
-      conf: Flows/conf/f_simplescd_dim_customer.json
+      conf: Flows/conf/f_SimpleScd_dim-customer.json
       target: tcsandbox
       explain_only: false
       source_table: henkan_demo.customer
       change_tolerance: 10
       target_table: henkan_demo.dim_customer
     dependsOn:
-      - transfer_customer_sqlserver_to_vertica
-  - name: transfer_customer_sqlserver_to_hive
+      - transfer-customer-sqlserver-to-vertica
+  - name: transfer-customer-sqlserver-to-hive
     type: transfer
     config:
       subtype: spark
-      conf: Flows/conf/f_simplescd_transfer_customer_sqlserver_to_hive.json
+      conf: Flows/conf/f_SimpleScd_transfer-customer-sqlserver-to-hive.json
       source: Sqlserver
       target: hive
       source_table: testdb.dbo.customer
@@ -135,23 +130,23 @@ nodes:
       empty_source_check: true
       target_table: test.customer
     dependsOn: []
-  - name: scd_customer
+  - name: scd-customer
     type: scd
     config:
       subtype: spark
-      conf: Flows/conf/f_simplescd_scd_customer.json
+      conf: Flows/conf/f_SimpleScd_scd-customer.json
       target: hive
       explain_only: false
       source_table: test.customer
       change_tolerance: 10
       target_table: test.dim_customer
     dependsOn:
-      - transfer_customer_sqlserver_to_hive
-  - name: transfer_dim_customer_hive_to_vertica
+      - transfer-customer-sqlserver-to-hive
+  - name: transfer-dim-customer-hive-to-vertica
     type: transfer
     config:
       subtype: spark
-      conf: Flows/conf/f_simplescd_transfer_dim_customer_hive_to_vertica.json
+      conf: Flows/conf/f_SimpleScd_transfer-dim-customer-hive-to-vertica.json
       source: hive
       target: tcsandbox
       source_table: test.dim_customer
@@ -159,15 +154,15 @@ nodes:
       empty_source_check: true
       target_table: henkan_demo.dim_customer
     dependsOn:
-      - truncate_dim_customer
-  - name: truncate_dim_customer
+      - truncate-dim-customer
+  - name: truncate-dim-customer
     type: transform
     config:
       target: tcsandbox
-      sql_file: Flows/sql/f_simplescd_truncate_dim_customer.sql
+      sql_file: Flows/sql/f_SimpleScd_truncate-dim-customer.sql
       explain_only: false
     dependsOn:
-      - scd_customer
+      - scd-customer
   - name: ScdUpdateless
     type: scd
     config:
@@ -180,4 +175,9 @@ nodes:
       target_table: henkan_demo.dim_supplier_updateless
     dependsOn:
       - ScdIndb
+  - name: Refresh-Parameters
+    type: subflow
+    config:
+      flow.name: Refresh-Parameters.subflow
+    dependsOn: []
 config: {}
