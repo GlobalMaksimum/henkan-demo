@@ -168,4 +168,16 @@ nodes:
       explain_only: false
     dependsOn:
       - scd_customer
+  - name: ScdUpdateless
+    type: scd
+    config:
+      subtype: updateless
+      conf: Flows/conf/f_simplescd_scdupdateless.json
+      target: tcsandbox
+      explain_only: false
+      change_tolerance: '100'
+      sql_file: Flows/sql/f_simplescd_scdupdateless.sql
+      target_table: henkan_demo.dim_supplier_updateless
+    dependsOn:
+      - ScdIndb
 config: {}
