@@ -1,0 +1,22 @@
+nodes:
+  - name: transfer-table
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/s_transfer_transfer-table.json
+      source: PGLab
+      target: hive
+      explain_only: false
+      empty_source_check: true
+      target_table: test.supplier
+      source_table: public.supplier
+    dependsOn:
+      - truncate-table
+  - name: truncate-table
+    type: transform
+    config:
+      target: hive
+      sql_file: sql/s_transfer_truncate-table.sql
+      explain_only: false
+    dependsOn: []
+config: {}

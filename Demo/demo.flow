@@ -1,0 +1,7 @@
+nodes:
+  - name: transfer
+    type: subflow
+    config:
+      flow.name: transfer.subflow
+    dependsOn: []
+config: {}
