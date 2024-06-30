@@ -1,0 +1,14 @@
+nodes:
+  - name: transfer1
+    type: transfer
+    config:
+      subtype: spark
+      conf: conf/f_a_transfer1.json
+      source: transfer1Source
+      target: transfer1Target
+      source_table: transfer1Table
+      sql_file: sql/f_a_transfer1.sql
+      explain_only: 'false'
+      empty_source_check: 'true'
+    dependsOn: []
+config: {}

@@ -1,0 +1,10 @@
+{
+    "target_schema": "targetschema",
+    "target_table": "targettable",
+    "column_mappings": [
+  {"source_column": "column1"},
+  {"source_column": "column2"}
+  ],
+    "fetch_size": 600,
+    "truncate_load":false
+  }
