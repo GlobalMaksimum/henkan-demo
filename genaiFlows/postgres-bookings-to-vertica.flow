@@ -75,7 +75,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-aircrafts-data.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -88,7 +88,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-airports-data.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -101,7 +101,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-boarding-passes.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -114,7 +114,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-bookings.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -127,7 +127,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-flights.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -140,7 +140,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-seats.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -153,7 +153,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-ticket-flights.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
@@ -166,7 +166,7 @@ nodes:
     config:
       subtype: spark
       conf: genaiFlows/conf/f_transfer-tickets.json
-      source: postgres
+      source: postgres-demo
       target: vsunny
       explain_only: false
       empty_source_check: true
