@@ -41,7 +41,7 @@ nodes:
   - name: create-counts-by-airport-name-city
     type: transform
     config:
-      target: create-counts-by-airport-name-cityTarget
+      target: vsunny
       sql_file: >-
         genaiFlows/sql/f_postgres-bookings-to-vertica_create-counts-by-airport-name-city.sql
       explain_only: false
