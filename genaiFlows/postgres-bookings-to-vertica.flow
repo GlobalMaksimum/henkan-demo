@@ -73,7 +73,7 @@ nodes:
   - name: transfer-aircrafts-data
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-aircrafts-data.json
       source: postgres-demo
       target: vsunny
@@ -86,7 +86,7 @@ nodes:
   - name: transfer-airports-data
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-airports-data.json
       source: postgres-demo
       target: vsunny
@@ -99,7 +99,7 @@ nodes:
   - name: transfer-boarding-passes
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-boarding-passes.json
       source: postgres-demo
       target: vsunny
@@ -112,7 +112,7 @@ nodes:
   - name: transfer-bookings
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-bookings.json
       source: postgres-demo
       target: vsunny
@@ -125,7 +125,7 @@ nodes:
   - name: transfer-flights
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-flights.json
       source: postgres-demo
       target: vsunny
@@ -138,7 +138,7 @@ nodes:
   - name: transfer-seats
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-seats.json
       source: postgres-demo
       target: vsunny
@@ -151,7 +151,7 @@ nodes:
   - name: transfer-ticket-flights
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-ticket-flights.json
       source: postgres-demo
       target: vsunny
@@ -164,7 +164,7 @@ nodes:
   - name: transfer-tickets
     type: transfer
     config:
-      subtype: indb
+      subtype: spark
       conf: genaiFlows/conf/f_transfer-tickets.json
       source: postgres-demo
       target: vsunny
