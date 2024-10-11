@@ -1,0 +1,194 @@
+name: postgres_bookings_to_vertica
+nodes:
+  - name: create_bookings_schema
+    dependsOn: []
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_bookings_schema.sql
+  - name: create_bookings_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_bookings_table.sql
+  - name: create_tickets_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_tickets_table.sql
+  - name: create_aircrafts_data_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_aircrafts_data_table.sql
+  - name: create_airports_data_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_airports_data_table.sql
+  - name: create_boarding_passes_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_boarding_passes_table.sql
+  - name: create_flights_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_flights_table.sql
+  - name: create_seats_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_seats_table.sql
+  - name: create_ticket_flights_table
+    dependsOn:
+      - create_bookings_schema
+    type: transform
+    config:
+      target: vsunny
+      explain_only: false
+      sql_file: genaiFlows/sql/f_create_ticket_flights_table.sql
+  - name: transfer_bookings
+    dependsOn:
+      - create_bookings_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_bookings.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.bookings
+      sql_file: genaiFlows/sql/f_transfer_bookings.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_tickets
+    dependsOn:
+      - create_tickets_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_tickets.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.tickets
+      sql_file: genaiFlows/sql/f_transfer_tickets.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_aircrafts_data
+    dependsOn:
+      - create_aircrafts_data_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_aircrafts_data.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.aircrafts_data
+      sql_file: genaiFlows/sql/f_transfer_aircrafts_data.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_airports_data
+    dependsOn:
+      - create_airports_data_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_airports_data.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.airports_data
+      sql_file: genaiFlows/sql/f_transfer_airports_data.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_boarding_passes
+    dependsOn:
+      - create_boarding_passes_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_boarding_passes.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.boarding_passes
+      sql_file: genaiFlows/sql/f_transfer_boarding_passes.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_flights
+    dependsOn:
+      - create_flights_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_flights.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.flights
+      sql_file: genaiFlows/sql/f_transfer_flights.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_seats
+    dependsOn:
+      - create_seats_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_seats.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.seats
+      sql_file: genaiFlows/sql/f_transfer_seats.sql
+    depends_on:
+      - get-max-custkey
+  - name: transfer_ticket_flights
+    dependsOn:
+      - create_ticket_flights_table
+    type: transfer
+    config:
+      subtype: spark
+      conf: genaiFlows/conf/f_transfer_ticket_flights.json
+      source: demo
+      target: vsunny
+      explain_only: false
+      empty_source_check: true
+      target_table: bookings.ticket_flights
+      sql_file: genaiFlows/sql/f_transfer_ticket_flights.sql
+    depends_on:
+      - get-max-custkey
+config: {}

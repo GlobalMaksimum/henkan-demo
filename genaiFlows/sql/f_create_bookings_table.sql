@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS bookings.bookings (book_ref CHAR(6), book_date TIMESTAMP WITH TIME ZONE, total_amount NUMERIC(10, 2));

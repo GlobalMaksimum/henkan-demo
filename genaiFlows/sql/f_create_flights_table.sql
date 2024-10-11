@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS bookings.flights (flight_id INTEGER, flight_no CHAR(6), scheduled_departure TIMESTAMP WITH TIME ZONE, scheduled_arrival TIMESTAMP WITH TIME ZONE, departure_airport CHAR(3), arrival_airport CHAR(3), status VARCHAR(20), aircraft_code CHAR(3), actual_departure TIMESTAMP WITH TIME ZONE, actual_arrival TIMESTAMP WITH TIME ZONE);

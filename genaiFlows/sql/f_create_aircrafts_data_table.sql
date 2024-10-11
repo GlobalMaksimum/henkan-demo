@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS bookings.aircrafts_data (aircraft_code CHAR(3), model VARCHAR(1000), range INTEGER);
