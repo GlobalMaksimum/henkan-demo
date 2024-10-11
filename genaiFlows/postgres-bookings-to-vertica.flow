@@ -38,6 +38,16 @@ nodes:
       sql_file: genaiFlows/sql/f_create-bookings-table.sql
     dependsOn:
       - create-bookings-schema
+  - name: create-counts-by-airport-name-city
+    type: transform
+    config:
+      target: create-counts-by-airport-name-cityTarget
+      sql_file: >-
+        genaiFlows/sql/f_postgres-bookings-to-vertica_create-counts-by-airport-name-city.sql
+      explain_only: false
+    dependsOn:
+      - transfer-airports-data
+      - transfer-flights
   - name: create-flights-table
     type: transform
     config:
