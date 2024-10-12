@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS bookings.boarding_passes (ticket_no CHAR(13), flight_id INTEGER, boarding_no INTEGER, seat_no VARCHAR(4));

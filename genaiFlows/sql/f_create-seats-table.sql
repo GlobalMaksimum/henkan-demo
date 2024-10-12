@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS bookings.seats (aircraft_code CHAR(3), seat_no VARCHAR(4), fare_conditions VARCHAR(10));

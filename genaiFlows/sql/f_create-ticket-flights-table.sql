@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS bookings.ticket_flights (ticket_no CHAR(13), flight_id INTEGER, fare_conditions VARCHAR(10), amount NUMERIC(10, 2));

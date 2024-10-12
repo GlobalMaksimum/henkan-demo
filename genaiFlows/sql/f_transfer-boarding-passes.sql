@@ -1,1 +1,0 @@
-(SELECT * FROM bookings.boarding_passes) tbl

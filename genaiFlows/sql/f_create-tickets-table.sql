@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS bookings.tickets (ticket_no CHAR(13), book_ref CHAR(6), passenger_id VARCHAR(20), passenger_name VARCHAR(1000), contact_data VARCHAR(1000));
